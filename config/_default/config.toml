@@ -1,5 +1,5 @@
 # Change baseurl before deploy
-baseurl = ""
+baseurl = "sa1g.github.io"
 languageCode = "en-us"
 title = "Ettore Saggiorato - Sa1g"
 
