@@ -2,7 +2,7 @@
 title: Natural Language Understanding
 description: Implementing and fine-tuning language models for next-word prediction, slot filling, intent prediction, and sentiment analysis.
 slug: nlu
-date: 2025-06-15 01:00:00+0000
+date: 2025-07-15 01:00:00+0000
 # image: cover.jpg
 categories:
   - uni_projects
