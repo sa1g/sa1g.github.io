@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Posts on Ettore Saggiorato - Sa1g</title><link>https://sa1g.github.io/post/</link><description>Recent content in Posts on Ettore Saggiorato - Sa1g</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Fri, 13 Jun 2025 01:00:00 +0000</lastBuildDate><atom:link href="https://sa1g.github.io/post/index.xml" rel="self" type="application/rss+xml"/><item><title>Automated Planning</title><link>https://sa1g.github.io/p/automated-planning/</link><pubDate>Fri, 13 Jun 2025 01:00:00 +0000</pubDate><guid>https://sa1g.github.io/p/automated-planning/</guid><description>&lt;p>&lt;a class="link" href="https://github.com/sa1g/automated-planning" target="_blank" rel="noopener"
+>Project Repo&lt;/a>&lt;/p>
+&lt;p>This project investigates the modeling of planning problems using PDDL and HDDL, with planner execution facilitated through planutils &lt;a class="link" href="https://github.com/AI-Planning/planutils" target="_blank" rel="noopener"
+>[1]&lt;/a> and Panda &lt;a class="link" href="https://doi.org/10.1007/s13218-020-00699-y" target="_blank" rel="noopener"
+>[2]&lt;/a>. The implementation progresses from foundational classical planning to temporal planning, culminating in robotic system integration via PlanSys2 &lt;a class="link" href="https://arxiv.org/abs/2107.00376" target="_blank" rel="noopener"
+>[3]&lt;/a>. Key challenges addressed include the modeling of limited resources, multi agent coordination, and compatibility with robotic execution frameworks.&lt;/p>
+&lt;p>More info in the report:&lt;/p>
+&lt;p align="center">
+&lt;a href="https://github.com/sa1g/automated-planning/blob/main/report/report.pdf">&lt;img src="https://raw.githubusercontent.com/sa1g/automated-planning/refs/heads/main/report/report.png" width="250"/>&lt;/a>
+&lt;/p>
+&lt;p align="center">
+Click to download report
+&lt;/p></description></item><item><title>Advanced Computer Vision - MobileCLIP</title><link>https://sa1g.github.io/p/acv/</link><pubDate>Thu, 20 Feb 2025 01:00:00 +0000</pubDate><guid>https://sa1g.github.io/p/acv/</guid><description>&lt;p>&lt;a class="link" href="https://github.com/sa1g/advanced-cv" target="_blank" rel="noopener"
+>Project Repo&lt;/a>&lt;/p>
+&lt;p>Made in collaboration with &lt;a class="link" href="https://github.com/IlPoiana" target="_blank" rel="noopener"
+>Emanuele&lt;/a>&lt;/p>
+&lt;p>This is not strictly a project, but rather a case study on how MobileCLIP was developed, focusing on understanding the architecture, training and dataset creation, and the overall process of building a lightweight CLIP model for mobile devices. Possible improvements were proposed.&lt;/p>
+&lt;p align="center">
+&lt;a href="https://github.com/sa1g/advanced-cv/blob/main/MobileClip_presentation.pdf">&lt;img src="image.png" width="250"/>&lt;/a>
+&lt;/p>
+&lt;p align="center">
+Click to download presentation
+&lt;/p>
+&lt;h3 id="training">Training
+&lt;/h3>&lt;ul>
+&lt;li>&lt;strong>TinyCLIP distillation of MobileCLIP&lt;/strong>
+&lt;ul>
+&lt;li>Reduce the model parameter number, while keeping most of the original accuracy using TinyCLIP.&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>&lt;strong>Improving synthetic captions&lt;/strong>
+&lt;ul>
+&lt;li>Regenerate captions if they are too similar in the reinforced dataset.&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>&lt;strong>Sigmoid self-attention&lt;/strong>
+&lt;ul>
+&lt;li>Substitute softmax with sigmoid self-attention in the self-attention layers.&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;h3 id="inference">Inference
+&lt;/h3>&lt;ul>
+&lt;li>&lt;strong>PuMer adaptation to MobileCLIP&lt;/strong>
+&lt;ul>
+&lt;li>PuMer adopts token pruning &lt;strong>(TIP)&lt;/strong> and merging &lt;strong>(MAM)&lt;/strong> in ViLT architecture to improve latency without compromising model performance.&lt;/li>
+&lt;li>MobileCLIP differs from ViLT from a structural perspective, but modality aware merging (MAM) still could lead to small latency improvements.&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>&lt;strong>Token Ranking Pruning&lt;/strong>
+&lt;ul>
+&lt;li>Patch Ranking original purpose was to &lt;strong>prune image patches&lt;/strong> in tranformer based CLIP models &lt;strong>through a predictor&lt;/strong> to reduce the number of tokens processed through the image and text encoder.&lt;/li>
+&lt;li>Adapting this technique to the MobileCLIP text encoder could result in similar improvements to the paper implementation.&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>&lt;strong>Dynamic Input Resolution&lt;/strong>
+&lt;ul>
+&lt;li>Adjust input resolution on a per-sample basis: low-resolution inference for simpler images, high-resolution for more complex ones.&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul></description></item><item><title>EvoMusic</title><link>https://sa1g.github.io/p/evo-music/</link><pubDate>Sun, 09 Feb 2025 01:00:00 +0000</pubDate><guid>https://sa1g.github.io/p/evo-music/</guid><description>&lt;p>&lt;a class="link" href="https://github.com/sa1g/multi-agent-policy-rl" target="_blank" rel="noopener"
+>Project Repo&lt;/a>&lt;/p>
+&lt;p>Made in collaboration with &lt;a class="link" href="https://github.com/DavidC001" target="_blank" rel="noopener"
+>Davide&lt;/a>, &lt;a class="link" href="https://github.com/lorenzoorsingher" target="_blank" rel="noopener"
+>Lorenzo&lt;/a> and &lt;a class="link" href="https://github.com/blauer4" target="_blank" rel="noopener"
+>Laurence&lt;/a>.&lt;/p>
+&lt;p>EvoMusic is an adaptive music generation system designed to evolve music in alignment with user preferences. By analyzing user interactions, it continuously refines its understanding of musical tastes and generates personalized compositions.&lt;/p>
+&lt;p>At its core, EvoMusic combines a music scoring mechanism, user feedback modeling, conditional music generation, and evolutionary strategies. The system follows a loop where it evolves music based on inferred preferences, generates a playlist, collects feedback, and fine-tunes its understanding of user tastes. This iterative process ensures that the music adapts dynamically to each user.&lt;/p>
+&lt;div style="display: flex; justify-content: center; gap: 40px; align-items: center;">
+&lt;div style="text-align: center;">
+&lt;a href="https://github.com/sa1g/EvoMusic/blob/main/EvoMusic_report.pdf">
+&lt;img src="image.png" width="250"/>
+&lt;/a>
+&lt;p>Click to download report&lt;/p>
+&lt;/div>
+&lt;div style="text-align: center;">
+&lt;a href="https://github.com/sa1g/EvoMusic/blob/main/slides.pdf">
+&lt;img src="image1.png" width="250"/>
+&lt;/a>
+&lt;p>Click to download slides&lt;/p>
+&lt;/div>
+&lt;/div></description></item><item><title>GPU Computing</title><link>https://sa1g.github.io/p/gpu-computing/</link><pubDate>Sat, 01 Feb 2025 01:00:00 +0000</pubDate><guid>https://sa1g.github.io/p/gpu-computing/</guid><description>&lt;p>&lt;a class="link" href="https://github.com/sa1g/gpu-computing" target="_blank" rel="noopener"
+>Project Repo&lt;/a>&lt;/p>
+&lt;p>These assignments are about learning the basics of GPU programming using CUDA. In all assignment we benchmark non-symmetric matrices of size $N \times N$, where $N$ is a power of 2, with different kernels and block sizes.&lt;/p>
+&lt;p align="center">
+&lt;a href="https://github.com/sa1g/gpu-computing/blob/main/A3/report/stitched_report.pdf">&lt;img src="image.png" width="250"/>&lt;/a>
+&lt;/p>
+&lt;p align="center">
+Click to download report
+&lt;/p>
+&lt;h2 id="first-assignment">First Assignment
+&lt;/h2>&lt;p>Develop a few algorithms to transpose the matrix in CPU, measure effective bandwidth under different compiler optimizations (-O0, -O1, -O2, -O3), analyze cache behavior and efficiency.&lt;/p>
+&lt;h2 id="second-assignment">Second Assignment
+&lt;/h2>&lt;p>Develop a few algorithms to transpose the matrix in GPU, measure effective bandwidth and efficiency.
+The developed algorithms are:&lt;/p>
+&lt;ul>
+&lt;li>simple transposition&lt;/li>
+&lt;li>with shared memory&lt;/li>
+&lt;li>with shared memory and coalesced memory access&lt;/li>
+&lt;/ul>
+&lt;p>Results were also compared with the Copy of the matrix in GPU, to compare to the &lt;em>simplest&lt;/em> algorithm we could use.&lt;/p>
+&lt;h2 id="third-assignment">Third Assignment
+&lt;/h2>&lt;p>Develop some algorithms to transpose the matrix in GPU, using NVIDIA&amp;rsquo;s Cooperative Groups. Compare the results against cuBLAS.
+This wasn&amp;rsquo;t straightforward as Cooperative Groups are not a good idea for dense matrix transposition, so I had to &lt;em>work against&lt;/em> all the things that were studied during the course.
+Three algorithms were developed (ignoring copy):&lt;/p>
+&lt;ul>
+&lt;li>Intra-block synchronization (good old &lt;code>__syncthreads()&lt;/code>)&lt;/li>
+&lt;li>Intra-block synchronization coalesced&lt;/li>
+&lt;li>Inter-block synchronization (grid-wide synch, expected and demonstrated slower)&lt;/li>
+&lt;/ul></description></item><item><title>Autonomous Software Agents</title><link>https://sa1g.github.io/p/asa/</link><pubDate>Tue, 21 Jan 2025 01:00:00 +0000</pubDate><guid>https://sa1g.github.io/p/asa/</guid><description>&lt;p>&lt;a class="link" href="https://github.com/sa1g/autonomous-software-agents" target="_blank" rel="noopener"
+>Project Repo&lt;/a>&lt;/p>
+&lt;p>Made in collaboration with &lt;a class="link" href="https://github.com/bertogb23" target="_blank" rel="noopener"
+>Gianluca&lt;/a>.&lt;/p>
+&lt;p>The project is about creating a multi-agent system that can navigate in a simulated environment, using the &lt;a class="link" href="https://github.com/unitn-ASA/Deliveroo.js.git" target="_blank" rel="noopener"
+>Deliveroo.js&lt;/a> framework. The agents are designed to work together to achieve their goals, and they use PDDL (&lt;a class="link" href="https://github.com/AI-Planning/planutils" target="_blank" rel="noopener"
+>planutils&lt;/a>) for planning their actions.&lt;/p>
+&lt;p>Agents can both be run in a single agent mode or in a multi-agent mode. In the multi-agent mode, agents work together to achieve their goals, and they can communicate with each other to coordinate their actions. The cooperative implementaton tries to find a plan that is optimal for the team, while blocking the best path for adversaries. This solution in kind of yielding, where the agents are willing to sacrifice their own performance for the sake of the team.&lt;/p>
+&lt;p align="center">
+&lt;img src="24c1_2.png" width="500"/>&lt;/a>
+&lt;/p>
+&lt;p align="center">
+Example of map analysis. Green is the map. Orange (darker) representsthe best positions to visualize the spawning of new parcels. Blue (darker) represent the most traveled paths.
+&lt;/p>
+&lt;p>To have a better understanding of the maps, static analysis are performed to extract the statically most traveled paths. This information is used to create a heuristic that guides the agents in their planning process. The heuristic is based on the idea that the agents should avoid the most traveled paths, as they are likely to be more congested and less efficient. Also these paths are the ones that adversaries will use to reach their goal and are the ones that we want to block.&lt;/p>
+&lt;p>As the plans are generated by the PDDL server, to improve the performance of the agents, we implemented a caching system that stores the plans generated by the PDDL server. This allows the agents to reuse previously generated plans, which can significantly reduce the time required to generate new plans. Also a loadbalancing system is implemented to distribute the load of the PDDL server across multiple instances. This allows the agents to generate plans more quickly (lower response times) and efficiently, as they can take advantage of the available resources.&lt;/p>
+&lt;p>&lt;strong>Known issues&lt;/strong>: there is a syncronization bug between agent and the deliveroo server. Sometimes commands are not responded by the server, probably due to a limitation of the server itself.&lt;/p>
+&lt;p align="center">
+&lt;a href="https://github.com/sa1g/autonomous-software-agents/blob/main/presentation.pdf">&lt;img src="presentation.png" width="250"/>&lt;/a>
+&lt;/p>
+&lt;p align="center">
+Click to download slides
+&lt;/p></description></item><item><title>Kiwi Recon</title><link>https://sa1g.github.io/p/kiwi-recon/</link><pubDate>Wed, 14 Feb 2024 01:00:00 +0000</pubDate><guid>https://sa1g.github.io/p/kiwi-recon/</guid><description>&lt;p>&lt;a class="link" href="https://github.com/sa1g/kiwi-recon" target="_blank" rel="noopener"
+>Project Link&lt;/a>&lt;/p>
+&lt;p>This project, developed for the course of &lt;em>Signal, Image and Video&lt;/em> focuses on verifying the possiblity to estimate the size of kiwi-fruits from 2D images taken directly on the field, using Machine Learning as little as possible (&amp;ldquo;only&amp;rdquo; for getting the masks).
+The application of this software could be beneficial for farmers that want to measure the performances of their land, this is just the prototype of what it could be possible to do, such as visualize the production quality identifying plant lines, orchards and, if the software is used by many farmers it could be useful to improve quality, production quantity and research about those.&lt;/p>
+&lt;p>More infos in the &lt;a class="link" href="https://github.com/sa1g/kiwi-recon/blob/main/project%20report.pdf" target="_blank" rel="noopener"
+>Report&lt;/a>.&lt;/p>
+&lt;div style="display: flex; justify-content: center; gap: 40px; align-items: center;">
+&lt;div style="text-align: center;">
+&lt;a href="https://github.com/sa1g/kiwi-recon/blob/main/project%20report.pdf">
+&lt;img src="image.png" width="250"/>
+&lt;/a>
+&lt;p>Click to download report&lt;/p>
+&lt;/div>
+&lt;div style="text-align: center;">
+&lt;a href="https://github.com/sa1g/kiwi-recon/blob/main/slides.pdf">
+&lt;img src="image1.png" width="250"/>
+&lt;/a>
+&lt;p>Click to download slides&lt;/p>
+&lt;/div>
+&lt;/div>
+&lt;blockquote>
+&lt;p>This project was fun.
+— &lt;cite>E&lt;/cite>&lt;/p>&lt;/blockquote>
+&lt;h2 id="future-works">Future Works
+&lt;/h2>&lt;p>This project could be improved a lot and sent to production (it wasn&amp;rsquo;t a goal for the exam, so I didn&amp;rsquo;t focus on it), some of the improvements could be:&lt;/p>
+&lt;ul>
+&lt;li>Use a better (faster, lighter) model for the masks&lt;/li>
+&lt;li>Get more data (and augmentation)&lt;/li>
+&lt;li>Model the size estimator instead of making everything by hand&lt;/li>
+&lt;li>Model the fruit &lt;em>filtering&lt;/em> that removes the fruits that are not in the correct position for measurement - here it could be interesting to see if it&amp;rsquo;s possible to model it so that it can estimate the size of the fruit even if it&amp;rsquo;s not in the correct position..pretty hard to do tho.&lt;/li>
+&lt;/ul></description></item><item><title>Multi-Agent Policy RL - AI Economist</title><link>https://sa1g.github.io/p/map-rl/</link><pubDate>Sun, 11 Jun 2023 01:00:00 +0000</pubDate><guid>https://sa1g.github.io/p/map-rl/</guid><description>&lt;p>&lt;a class="link" href="https://github.com/sa1g/multi-agent-policy-rl" target="_blank" rel="noopener"
+>Project Repo&lt;/a>&lt;/p>
+&lt;p>The idea of this project is to train multiple agents in the &lt;a class="link" href="https://arxiv.org/abs/2108.02755" target="_blank" rel="noopener"
+>AI Economist&lt;/a> using &lt;a class="link" href="https://arxiv.org/abs/1707.06347" target="_blank" rel="noopener"
+>PPO v1&lt;/a> and &lt;a class="link" href="https://arxiv.org/abs/2012.07723" target="_blank" rel="noopener"
+>Decision Trees with Q-Learning&lt;/a> concurrently, to have a fast way to verify the capabilities of the DT in a complex, competitive, scenario. As no existing framework supports batch and online training algos concurrently, I implemented this basic framework.&lt;/p>
+&lt;p>The issue that different algorithms may have different training speeds is not addressed in this project, developments in this direction are welcome. Currently all algos get the same amount of data. Online algorithms are trained in an online fashion, after each batch of data is collected, and before updating the agents of the batch algorithms.&lt;/p>
+&lt;p>To make this project run faster, data gatering is distributed across multiple processes (&lt;code>fork&lt;/code>), and the training is done in a single process. As the project was developed before I learnt about &lt;code>mpi&lt;/code> and &lt;code>tensorboard&lt;/code>, it does not use them, and much stuff is hardcoded. A full rewrite could be interesting, also to add the missing feature said above. At the time I tried to use &lt;code>ray&lt;/code> to distribute the training, but I wasn&amp;rsquo;t able to make it work, so I wrote everything from scratch. The code is not very clean, but it works.&lt;/p>
+&lt;p>Training scheme for the multi-algorithm training management:&lt;/p>
+&lt;p>&lt;img src="https://sa1g.github.io/p/map-rl/onoff1.png"
+width="352"
+height="764"
+srcset="https://sa1g.github.io/p/map-rl/onoff1_hu_4d7bfc9c9b01d3ca.png 480w, https://sa1g.github.io/p/map-rl/onoff1_hu_d0ebb2c3cf257bf3.png 1024w"
+loading="lazy"
+alt="Training Algorithms"
+class="gallery-image"
+data-flex-grow="46"
+data-flex-basis="110px"
+>&lt;/p></description></item></channel></rss>

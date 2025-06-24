@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Mask R-CNN on Ettore Saggiorato - Sa1g</title><link>https://sa1g.github.io/tags/mask-r-cnn/</link><description>Recent content in Mask R-CNN on Ettore Saggiorato - Sa1g</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Wed, 14 Feb 2024 01:00:00 +0000</lastBuildDate><atom:link href="https://sa1g.github.io/tags/mask-r-cnn/index.xml" rel="self" type="application/rss+xml"/><item><title>Kiwi Recon</title><link>https://sa1g.github.io/p/kiwi-recon/</link><pubDate>Wed, 14 Feb 2024 01:00:00 +0000</pubDate><guid>https://sa1g.github.io/p/kiwi-recon/</guid><description>&lt;p>&lt;a class="link" href="https://github.com/sa1g/kiwi-recon" target="_blank" rel="noopener"
+>Project Link&lt;/a>&lt;/p>
+&lt;p>This project, developed for the course of &lt;em>Signal, Image and Video&lt;/em> focuses on verifying the possiblity to estimate the size of kiwi-fruits from 2D images taken directly on the field, using Machine Learning as little as possible (&amp;ldquo;only&amp;rdquo; for getting the masks).
+The application of this software could be beneficial for farmers that want to measure the performances of their land, this is just the prototype of what it could be possible to do, such as visualize the production quality identifying plant lines, orchards and, if the software is used by many farmers it could be useful to improve quality, production quantity and research about those.&lt;/p>
+&lt;p>More infos in the &lt;a class="link" href="https://github.com/sa1g/kiwi-recon/blob/main/project%20report.pdf" target="_blank" rel="noopener"
+>Report&lt;/a>.&lt;/p>
+&lt;div style="display: flex; justify-content: center; gap: 40px; align-items: center;">
+&lt;div style="text-align: center;">
+&lt;a href="https://github.com/sa1g/kiwi-recon/blob/main/project%20report.pdf">
+&lt;img src="image.png" width="250"/>
+&lt;/a>
+&lt;p>Click to download report&lt;/p>
+&lt;/div>
+&lt;div style="text-align: center;">
+&lt;a href="https://github.com/sa1g/kiwi-recon/blob/main/slides.pdf">
+&lt;img src="image1.png" width="250"/>
+&lt;/a>
+&lt;p>Click to download slides&lt;/p>
+&lt;/div>
+&lt;/div>
+&lt;blockquote>
+&lt;p>This project was fun.
+— &lt;cite>E&lt;/cite>&lt;/p>&lt;/blockquote>
+&lt;h2 id="future-works">Future Works
+&lt;/h2>&lt;p>This project could be improved a lot and sent to production (it wasn&amp;rsquo;t a goal for the exam, so I didn&amp;rsquo;t focus on it), some of the improvements could be:&lt;/p>
+&lt;ul>
+&lt;li>Use a better (faster, lighter) model for the masks&lt;/li>
+&lt;li>Get more data (and augmentation)&lt;/li>
+&lt;li>Model the size estimator instead of making everything by hand&lt;/li>
+&lt;li>Model the fruit &lt;em>filtering&lt;/em> that removes the fruits that are not in the correct position for measurement - here it could be interesting to see if it&amp;rsquo;s possible to model it so that it can estimate the size of the fruit even if it&amp;rsquo;s not in the correct position..pretty hard to do tho.&lt;/li>
+&lt;/ul></description></item></channel></rss>

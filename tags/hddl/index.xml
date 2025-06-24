@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>HDDL on Ettore Saggiorato - Sa1g</title><link>https://sa1g.github.io/tags/hddl/</link><description>Recent content in HDDL on Ettore Saggiorato - Sa1g</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Fri, 13 Jun 2025 01:00:00 +0000</lastBuildDate><atom:link href="https://sa1g.github.io/tags/hddl/index.xml" rel="self" type="application/rss+xml"/><item><title>Automated Planning</title><link>https://sa1g.github.io/p/automated-planning/</link><pubDate>Fri, 13 Jun 2025 01:00:00 +0000</pubDate><guid>https://sa1g.github.io/p/automated-planning/</guid><description>&lt;p>&lt;a class="link" href="https://github.com/sa1g/automated-planning" target="_blank" rel="noopener"
+>Project Repo&lt;/a>&lt;/p>
+&lt;p>This project investigates the modeling of planning problems using PDDL and HDDL, with planner execution facilitated through planutils &lt;a class="link" href="https://github.com/AI-Planning/planutils" target="_blank" rel="noopener"
+>[1]&lt;/a> and Panda &lt;a class="link" href="https://doi.org/10.1007/s13218-020-00699-y" target="_blank" rel="noopener"
+>[2]&lt;/a>. The implementation progresses from foundational classical planning to temporal planning, culminating in robotic system integration via PlanSys2 &lt;a class="link" href="https://arxiv.org/abs/2107.00376" target="_blank" rel="noopener"
+>[3]&lt;/a>. Key challenges addressed include the modeling of limited resources, multi agent coordination, and compatibility with robotic execution frameworks.&lt;/p>
+&lt;p>More info in the report:&lt;/p>
+&lt;p align="center">
+&lt;a href="https://github.com/sa1g/automated-planning/blob/main/report/report.pdf">&lt;img src="https://raw.githubusercontent.com/sa1g/automated-planning/refs/heads/main/report/report.png" width="250"/>&lt;/a>
+&lt;/p>
+&lt;p align="center">
+Click to download report
+&lt;/p></description></item></channel></rss>

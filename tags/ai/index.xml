@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>AI on Ettore Saggiorato - Sa1g</title><link>https://sa1g.github.io/tags/ai/</link><description>Recent content in AI on Ettore Saggiorato - Sa1g</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Thu, 20 Feb 2025 01:00:00 +0000</lastBuildDate><atom:link href="https://sa1g.github.io/tags/ai/index.xml" rel="self" type="application/rss+xml"/><item><title>Advanced Computer Vision - MobileCLIP</title><link>https://sa1g.github.io/p/acv/</link><pubDate>Thu, 20 Feb 2025 01:00:00 +0000</pubDate><guid>https://sa1g.github.io/p/acv/</guid><description>&lt;p>&lt;a class="link" href="https://github.com/sa1g/advanced-cv" target="_blank" rel="noopener"
+>Project Repo&lt;/a>&lt;/p>
+&lt;p>Made in collaboration with &lt;a class="link" href="https://github.com/IlPoiana" target="_blank" rel="noopener"
+>Emanuele&lt;/a>&lt;/p>
+&lt;p>This is not strictly a project, but rather a case study on how MobileCLIP was developed, focusing on understanding the architecture, training and dataset creation, and the overall process of building a lightweight CLIP model for mobile devices. Possible improvements were proposed.&lt;/p>
+&lt;p align="center">
+&lt;a href="https://github.com/sa1g/advanced-cv/blob/main/MobileClip_presentation.pdf">&lt;img src="image.png" width="250"/>&lt;/a>
+&lt;/p>
+&lt;p align="center">
+Click to download presentation
+&lt;/p>
+&lt;h3 id="training">Training
+&lt;/h3>&lt;ul>
+&lt;li>&lt;strong>TinyCLIP distillation of MobileCLIP&lt;/strong>
+&lt;ul>
+&lt;li>Reduce the model parameter number, while keeping most of the original accuracy using TinyCLIP.&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>&lt;strong>Improving synthetic captions&lt;/strong>
+&lt;ul>
+&lt;li>Regenerate captions if they are too similar in the reinforced dataset.&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>&lt;strong>Sigmoid self-attention&lt;/strong>
+&lt;ul>
+&lt;li>Substitute softmax with sigmoid self-attention in the self-attention layers.&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;h3 id="inference">Inference
+&lt;/h3>&lt;ul>
+&lt;li>&lt;strong>PuMer adaptation to MobileCLIP&lt;/strong>
+&lt;ul>
+&lt;li>PuMer adopts token pruning &lt;strong>(TIP)&lt;/strong> and merging &lt;strong>(MAM)&lt;/strong> in ViLT architecture to improve latency without compromising model performance.&lt;/li>
+&lt;li>MobileCLIP differs from ViLT from a structural perspective, but modality aware merging (MAM) still could lead to small latency improvements.&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>&lt;strong>Token Ranking Pruning&lt;/strong>
+&lt;ul>
+&lt;li>Patch Ranking original purpose was to &lt;strong>prune image patches&lt;/strong> in tranformer based CLIP models &lt;strong>through a predictor&lt;/strong> to reduce the number of tokens processed through the image and text encoder.&lt;/li>
+&lt;li>Adapting this technique to the MobileCLIP text encoder could result in similar improvements to the paper implementation.&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>&lt;strong>Dynamic Input Resolution&lt;/strong>
+&lt;ul>
+&lt;li>Adjust input resolution on a per-sample basis: low-resolution inference for simpler images, high-resolution for more complex ones.&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul></description></item><item><title>EvoMusic</title><link>https://sa1g.github.io/p/evo-music/</link><pubDate>Sun, 09 Feb 2025 01:00:00 +0000</pubDate><guid>https://sa1g.github.io/p/evo-music/</guid><description>&lt;p>&lt;a class="link" href="https://github.com/sa1g/multi-agent-policy-rl" target="_blank" rel="noopener"
+>Project Repo&lt;/a>&lt;/p>
+&lt;p>Made in collaboration with &lt;a class="link" href="https://github.com/DavidC001" target="_blank" rel="noopener"
+>Davide&lt;/a>, &lt;a class="link" href="https://github.com/lorenzoorsingher" target="_blank" rel="noopener"
+>Lorenzo&lt;/a> and &lt;a class="link" href="https://github.com/blauer4" target="_blank" rel="noopener"
+>Laurence&lt;/a>.&lt;/p>
+&lt;p>EvoMusic is an adaptive music generation system designed to evolve music in alignment with user preferences. By analyzing user interactions, it continuously refines its understanding of musical tastes and generates personalized compositions.&lt;/p>
+&lt;p>At its core, EvoMusic combines a music scoring mechanism, user feedback modeling, conditional music generation, and evolutionary strategies. The system follows a loop where it evolves music based on inferred preferences, generates a playlist, collects feedback, and fine-tunes its understanding of user tastes. This iterative process ensures that the music adapts dynamically to each user.&lt;/p>
+&lt;div style="display: flex; justify-content: center; gap: 40px; align-items: center;">
+&lt;div style="text-align: center;">
+&lt;a href="https://github.com/sa1g/EvoMusic/blob/main/EvoMusic_report.pdf">
+&lt;img src="image.png" width="250"/>
+&lt;/a>
+&lt;p>Click to download report&lt;/p>
+&lt;/div>
+&lt;div style="text-align: center;">
+&lt;a href="https://github.com/sa1g/EvoMusic/blob/main/slides.pdf">
+&lt;img src="image1.png" width="250"/>
+&lt;/a>
+&lt;p>Click to download slides&lt;/p>
+&lt;/div>
+&lt;/div></description></item><item><title>Multi-Agent Policy RL - AI Economist</title><link>https://sa1g.github.io/p/map-rl/</link><pubDate>Sun, 11 Jun 2023 01:00:00 +0000</pubDate><guid>https://sa1g.github.io/p/map-rl/</guid><description>&lt;p>&lt;a class="link" href="https://github.com/sa1g/multi-agent-policy-rl" target="_blank" rel="noopener"
+>Project Repo&lt;/a>&lt;/p>
+&lt;p>The idea of this project is to train multiple agents in the &lt;a class="link" href="https://arxiv.org/abs/2108.02755" target="_blank" rel="noopener"
+>AI Economist&lt;/a> using &lt;a class="link" href="https://arxiv.org/abs/1707.06347" target="_blank" rel="noopener"
+>PPO v1&lt;/a> and &lt;a class="link" href="https://arxiv.org/abs/2012.07723" target="_blank" rel="noopener"
+>Decision Trees with Q-Learning&lt;/a> concurrently, to have a fast way to verify the capabilities of the DT in a complex, competitive, scenario. As no existing framework supports batch and online training algos concurrently, I implemented this basic framework.&lt;/p>
+&lt;p>The issue that different algorithms may have different training speeds is not addressed in this project, developments in this direction are welcome. Currently all algos get the same amount of data. Online algorithms are trained in an online fashion, after each batch of data is collected, and before updating the agents of the batch algorithms.&lt;/p>
+&lt;p>To make this project run faster, data gatering is distributed across multiple processes (&lt;code>fork&lt;/code>), and the training is done in a single process. As the project was developed before I learnt about &lt;code>mpi&lt;/code> and &lt;code>tensorboard&lt;/code>, it does not use them, and much stuff is hardcoded. A full rewrite could be interesting, also to add the missing feature said above. At the time I tried to use &lt;code>ray&lt;/code> to distribute the training, but I wasn&amp;rsquo;t able to make it work, so I wrote everything from scratch. The code is not very clean, but it works.&lt;/p>
+&lt;p>Training scheme for the multi-algorithm training management:&lt;/p>
+&lt;p>&lt;img src="https://sa1g.github.io/p/map-rl/onoff1.png"
+width="352"
+height="764"
+srcset="https://sa1g.github.io/p/map-rl/onoff1_hu_4d7bfc9c9b01d3ca.png 480w, https://sa1g.github.io/p/map-rl/onoff1_hu_d0ebb2c3cf257bf3.png 1024w"
+loading="lazy"
+alt="Training Algorithms"
+class="gallery-image"
+data-flex-grow="46"
+data-flex-basis="110px"
+>&lt;/p></description></item></channel></rss>

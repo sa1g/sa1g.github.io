@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>CLIP on Ettore Saggiorato - Sa1g</title><link>https://sa1g.github.io/tags/clip/</link><description>Recent content in CLIP on Ettore Saggiorato - Sa1g</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Thu, 20 Feb 2025 01:00:00 +0000</lastBuildDate><atom:link href="https://sa1g.github.io/tags/clip/index.xml" rel="self" type="application/rss+xml"/><item><title>Advanced Computer Vision - MobileCLIP</title><link>https://sa1g.github.io/p/acv/</link><pubDate>Thu, 20 Feb 2025 01:00:00 +0000</pubDate><guid>https://sa1g.github.io/p/acv/</guid><description>&lt;p>&lt;a class="link" href="https://github.com/sa1g/advanced-cv" target="_blank" rel="noopener"
+>Project Repo&lt;/a>&lt;/p>
+&lt;p>Made in collaboration with &lt;a class="link" href="https://github.com/IlPoiana" target="_blank" rel="noopener"
+>Emanuele&lt;/a>&lt;/p>
+&lt;p>This is not strictly a project, but rather a case study on how MobileCLIP was developed, focusing on understanding the architecture, training and dataset creation, and the overall process of building a lightweight CLIP model for mobile devices. Possible improvements were proposed.&lt;/p>
+&lt;p align="center">
+&lt;a href="https://github.com/sa1g/advanced-cv/blob/main/MobileClip_presentation.pdf">&lt;img src="image.png" width="250"/>&lt;/a>
+&lt;/p>
+&lt;p align="center">
+Click to download presentation
+&lt;/p>
+&lt;h3 id="training">Training
+&lt;/h3>&lt;ul>
+&lt;li>&lt;strong>TinyCLIP distillation of MobileCLIP&lt;/strong>
+&lt;ul>
+&lt;li>Reduce the model parameter number, while keeping most of the original accuracy using TinyCLIP.&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>&lt;strong>Improving synthetic captions&lt;/strong>
+&lt;ul>
+&lt;li>Regenerate captions if they are too similar in the reinforced dataset.&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>&lt;strong>Sigmoid self-attention&lt;/strong>
+&lt;ul>
+&lt;li>Substitute softmax with sigmoid self-attention in the self-attention layers.&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;h3 id="inference">Inference
+&lt;/h3>&lt;ul>
+&lt;li>&lt;strong>PuMer adaptation to MobileCLIP&lt;/strong>
+&lt;ul>
+&lt;li>PuMer adopts token pruning &lt;strong>(TIP)&lt;/strong> and merging &lt;strong>(MAM)&lt;/strong> in ViLT architecture to improve latency without compromising model performance.&lt;/li>
+&lt;li>MobileCLIP differs from ViLT from a structural perspective, but modality aware merging (MAM) still could lead to small latency improvements.&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>&lt;strong>Token Ranking Pruning&lt;/strong>
+&lt;ul>
+&lt;li>Patch Ranking original purpose was to &lt;strong>prune image patches&lt;/strong> in tranformer based CLIP models &lt;strong>through a predictor&lt;/strong> to reduce the number of tokens processed through the image and text encoder.&lt;/li>
+&lt;li>Adapting this technique to the MobileCLIP text encoder could result in similar improvements to the paper implementation.&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>&lt;strong>Dynamic Input Resolution&lt;/strong>
+&lt;ul>
+&lt;li>Adjust input resolution on a per-sample basis: low-resolution inference for simpler images, high-resolution for more complex ones.&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul></description></item></channel></rss>
