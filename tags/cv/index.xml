@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>CV on Ettore Saggiorato - Sa1g</title><link>https://sa1g.github.io/tags/cv/</link><description>Recent content in CV on Ettore Saggiorato - Sa1g</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Thu, 20 Feb 2025 01:00:00 +0000</lastBuildDate><atom:link href="https://sa1g.github.io/tags/cv/index.xml" rel="self" type="application/rss+xml"/><item><title>Advanced Computer Vision - MobileCLIP</title><link>https://sa1g.github.io/p/acv/</link><pubDate>Thu, 20 Feb 2025 01:00:00 +0000</pubDate><guid>https://sa1g.github.io/p/acv/</guid><description>&lt;p&gt;&lt;a class="link" href="https://github.com/sa1g/advanced-cv" target="_blank" rel="noopener"
+&gt;Project Repo&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Made in collaboration with &lt;a class="link" href="https://github.com/IlPoiana" target="_blank" rel="noopener"
+&gt;Emanuele&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;This is not strictly a project, but rather a case study on how MobileCLIP was developed, focusing on understanding the architecture, training and dataset creation, and the overall process of building a lightweight CLIP model for mobile devices. Possible improvements were proposed.&lt;/p&gt;
+&lt;p align="center"&gt;
+&lt;a href="https://github.com/sa1g/advanced-cv/blob/main/MobileClip_presentation.pdf"&gt;&lt;img src="image.png" width="250"/&gt;&lt;/a&gt;
+&lt;/p&gt;
+&lt;p align="center"&gt;
+Click to download presentation
+&lt;/p&gt;
+&lt;h3 id="training"&gt;Training
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;TinyCLIP distillation of MobileCLIP&lt;/strong&gt;
+&lt;ul&gt;
+&lt;li&gt;Reduce the model parameter number, while keeping most of the original accuracy using TinyCLIP.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Improving synthetic captions&lt;/strong&gt;
+&lt;ul&gt;
+&lt;li&gt;Regenerate captions if they are too similar in the reinforced dataset.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Sigmoid self-attention&lt;/strong&gt;
+&lt;ul&gt;
+&lt;li&gt;Substitute softmax with sigmoid self-attention in the self-attention layers.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id="inference"&gt;Inference
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;PuMer adaptation to MobileCLIP&lt;/strong&gt;
+&lt;ul&gt;
+&lt;li&gt;PuMer adopts token pruning &lt;strong&gt;(TIP)&lt;/strong&gt; and merging &lt;strong&gt;(MAM)&lt;/strong&gt; in ViLT architecture to improve latency without compromising model performance.&lt;/li&gt;
+&lt;li&gt;MobileCLIP differs from ViLT from a structural perspective, but modality aware merging (MAM) still could lead to small latency improvements.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Token Ranking Pruning&lt;/strong&gt;
+&lt;ul&gt;
+&lt;li&gt;Patch Ranking original purpose was to &lt;strong&gt;prune image patches&lt;/strong&gt; in tranformer based CLIP models &lt;strong&gt;through a predictor&lt;/strong&gt; to reduce the number of tokens processed through the image and text encoder.&lt;/li&gt;
+&lt;li&gt;Adapting this technique to the MobileCLIP text encoder could result in similar improvements to the paper implementation.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Dynamic Input Resolution&lt;/strong&gt;
+&lt;ul&gt;
+&lt;li&gt;Adjust input resolution on a per-sample basis: low-resolution inference for simpler images, high-resolution for more complex ones.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;</description></item><item><title>Kiwi Recon</title><link>https://sa1g.github.io/p/kiwi-recon/</link><pubDate>Wed, 14 Feb 2024 01:00:00 +0000</pubDate><guid>https://sa1g.github.io/p/kiwi-recon/</guid><description>&lt;p&gt;&lt;a class="link" href="https://github.com/sa1g/kiwi-recon" target="_blank" rel="noopener"
+&gt;Project Link&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;This project, developed for the course of &lt;em&gt;Signal, Image and Video&lt;/em&gt; focuses on verifying the possiblity to estimate the size of kiwi-fruits from 2D images taken directly on the field, using Machine Learning as little as possible (&amp;ldquo;only&amp;rdquo; for getting the masks).
+The application of this software could be beneficial for farmers that want to measure the performances of their land, this is just the prototype of what it could be possible to do, such as visualize the production quality identifying plant lines, orchards and, if the software is used by many farmers it could be useful to improve quality, production quantity and research about those.&lt;/p&gt;
+&lt;p&gt;More infos in the &lt;a class="link" href="https://github.com/sa1g/kiwi-recon/blob/main/project%20report.pdf" target="_blank" rel="noopener"
+&gt;Report&lt;/a&gt;.&lt;/p&gt;
+&lt;div style="display: flex; justify-content: center; gap: 40px; align-items: center;"&gt;
+&lt;div style="text-align: center;"&gt;
+&lt;a href="https://github.com/sa1g/kiwi-recon/blob/main/project%20report.pdf"&gt;
+&lt;img src="image.png" width="250"/&gt;
+&lt;/a&gt;
+&lt;p&gt;Click to download report&lt;/p&gt;
+&lt;/div&gt;
+&lt;div style="text-align: center;"&gt;
+&lt;a href="https://github.com/sa1g/kiwi-recon/blob/main/slides.pdf"&gt;
+&lt;img src="image1.png" width="250"/&gt;
+&lt;/a&gt;
+&lt;p&gt;Click to download slides&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;blockquote&gt;
+&lt;p&gt;This project was fun.
+— &lt;cite&gt;E&lt;/cite&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id="future-works"&gt;Future Works
+&lt;/h2&gt;&lt;p&gt;This project could be improved a lot and sent to production (it wasn&amp;rsquo;t a goal for the exam, so I didn&amp;rsquo;t focus on it), some of the improvements could be:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Use a better (faster, lighter) model for the masks&lt;/li&gt;
+&lt;li&gt;Get more data (and augmentation)&lt;/li&gt;
+&lt;li&gt;Model the size estimator instead of making everything by hand&lt;/li&gt;
+&lt;li&gt;Model the fruit &lt;em&gt;filtering&lt;/em&gt; that removes the fruits that are not in the correct position for measurement - here it could be interesting to see if it&amp;rsquo;s possible to model it so that it can estimate the size of the fruit even if it&amp;rsquo;s not in the correct position..pretty hard to do tho.&lt;/li&gt;
+&lt;/ul&gt;</description></item></channel></rss>

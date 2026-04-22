@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Python on Ettore Saggiorato - Sa1g</title><link>https://sa1g.github.io/tags/python/</link><description>Recent content in Python on Ettore Saggiorato - Sa1g</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Tue, 15 Jul 2025 01:00:00 +0000</lastBuildDate><atom:link href="https://sa1g.github.io/tags/python/index.xml" rel="self" type="application/rss+xml"/><item><title>Natural Language Understanding</title><link>https://sa1g.github.io/p/nlu/</link><pubDate>Tue, 15 Jul 2025 01:00:00 +0000</pubDate><guid>https://sa1g.github.io/p/nlu/</guid><description>&lt;p&gt;&lt;a class="link" href="https://github.com/sa1g/natural-language-understanding" target="_blank" rel="noopener"
+&gt;Project Repo&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id="lm---language-modeling"&gt;LM - Language Modeling
+&lt;/h2&gt;&lt;p&gt;The objective is to implement various techniques that can enhance the performance of a simple language model for next-word prediction and to understand how each of these techniques influences the model. Experiment with the model architecture, substituting the RNN with an LSTM block, using different optimizers, and apply different regularization techniques: Dropout, Weight Tying, Variational Dropout, and Non-Monotonically Triggered Average SGD.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Dataset&lt;/strong&gt;: PennTreeBank.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Metrics&lt;/strong&gt;: Perplxity.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="nlu---natural-language-understanding"&gt;NLU - Natural Language Understanding
+&lt;/h2&gt;&lt;p&gt;The objective for this assignment is to jointly perform slot filling and intent prediction on the ATIS dataset. Intent prediction requires the model to classify the whole sequence to a predefined set of possible user intentions. Slot filling consists of identifying and classifying the relevant entities in the sequence, used to parameterize the user intent. For the first part, we are tasked with implementing a functioning system using an LSTM backbone for the word token representations. For the second part, we are tasked with finetuning a pre-trained transformer BERT encoder to do the same task. The detail that needs more attention is about managing sub-tokenization.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Dataset&lt;/strong&gt;: Atis.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Metrics&lt;/strong&gt;: Accuracy (intention classification), F1 (slot filling).&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="sa---sentiment-analysis"&gt;SA - Sentiment Analysis
+&lt;/h2&gt;&lt;p&gt;Fine-tune BERT for the Aspect-based Sentiment Analysis task regarding the extraction of the aspect terms only. This assignment is very similar to NLU, the main difference is how the labels are managed (all of them are either &lt;code&gt;O&lt;/code&gt; or &lt;code&gt;T&lt;/code&gt;), and adapting &lt;a class="link" href="https://github.com/lixin4ever/E2E-TBSA/blob/master/evals.py" target="_blank" rel="noopener"
+&gt;SemEval&lt;/a&gt; for this task.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Dataset&lt;/strong&gt;: SemEval2014, laptop, task 4.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Metrics&lt;/strong&gt;: F1, Precision and Recall.&lt;/li&gt;
+&lt;/ul&gt;</description></item><item><title>CLIP Test Time Adaptatoin</title><link>https://sa1g.github.io/p/nlu/</link><pubDate>Tue, 10 Jun 2025 01:00:00 +0000</pubDate><guid>https://sa1g.github.io/p/nlu/</guid><description>&lt;p&gt;&lt;a class="link" href="https://github.com/sa1g/deep-learning-unitn" target="_blank" rel="noopener"
+&gt;Project Repo&lt;/a&gt;&lt;/p&gt;
+&lt;h1 id="-test-time-adaptation-tta-for-image-classification"&gt;🖼️ Test-Time Adaptation (TTA) for image classification
+&lt;/h1&gt;&lt;p&gt;In this project, we work on &lt;strong&gt;Test-Time Adaptation (TTA)&lt;/strong&gt;, which has recently gained traction due to its ability to enhance model performance without requiring access to training data. It involves improving the robustness of a pre-trained neural network to a test dataset, possibly by improving the network’s predictions on one test sample at a time.&lt;/p&gt;
+&lt;p&gt;In particular, we focus on &lt;strong&gt;TTA for image classification&lt;/strong&gt;, particularly using &lt;strong&gt;CLIP&lt;/strong&gt; [&lt;a class="link" href="#ref-clip2021" &gt;2&lt;/a&gt;] with &lt;strong&gt;TPT&lt;/strong&gt; [&lt;a class="link" href="#ref-tpt2022" &gt;3&lt;/a&gt;]. Our approach involves adapting the model on &lt;strong&gt;single-image test instances&lt;/strong&gt;, with the model being reset to its pre-trained state after each instance. This resembles &lt;strong&gt;TTIA&lt;/strong&gt;, keeping the constraint of no retention of prior test-time knowledge (between batches, so between images).&lt;/p&gt;
+&lt;!--- visualize image using html formatting, so that i can scale it properly --&gt;
+&lt;p align="center"&gt;
+&lt;img src="https://raw.githubusercontent.com/sa1g/deep-learning-unitn/refs/heads/main/plot/tpt.png" alt="Test-Time Prompt Tuning (TPT) for CLIP" title="Test-Time Prompt Tuning (TPT) for CLIP" width="600" class="center"/&gt;&lt;br&gt;
+&lt;em&gt;Figure 1: Test-Time Prompt Tuning (TPT) for CLIP&lt;/em&gt;
+&lt;/p&gt;
+&lt;p&gt;Additionally, we experiment with different techiqnues and approaches to try improving either the accuracy or inference speed of the model.&lt;/p&gt;
+&lt;h2 id="-setup"&gt;🚀 Setup
+&lt;/h2&gt;&lt;p&gt;The project is entirely self contained inside the jupyter notebook &lt;code&gt;report.ipynb&lt;/code&gt;. It can be run using &lt;a class="link" href="https://colab.research.google.com/" target="_blank" rel="noopener"
+&gt;Google Colab&lt;/a&gt;.&lt;/p&gt;
+&lt;h2 id="-project-overview"&gt;🧠 Project Overview
+&lt;/h2&gt;&lt;ol&gt;
+&lt;li&gt;Baseline - ZeroShot CLIP&lt;/li&gt;
+&lt;li&gt;Reproducing TPT:
+&lt;ul&gt;
+&lt;li&gt;Reproduce TPT + simplified CoOp (without pretraining) (&lt;strong&gt;Our contribution&lt;/strong&gt;)&lt;/li&gt;
+&lt;li&gt;Using OpenAI weights and OpenCLIP implementation
+&lt;ul&gt;
+&lt;li&gt;Compare zero-shot CLIP OpenAI (weights and implementation) with OpenCLIP (weights and implementation)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Using &lt;code&gt;Kornia&lt;/code&gt; instead of &lt;code&gt;AugMix&lt;/code&gt; / &lt;code&gt;torchvision.transforms&lt;/code&gt; (&lt;strong&gt;Extra: Our contribution&lt;/strong&gt;)
+&lt;ul&gt;
+&lt;li&gt;Recreate the AugMix pipeline in Kornia&lt;/li&gt;
+&lt;li&gt;Kornia is faster and can directly run on the GPU&lt;/li&gt;
+&lt;li&gt;Benchmarking the difference&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Trying to get better at TTA (&lt;strong&gt;Our contribution&lt;/strong&gt;)
+&lt;ul&gt;
+&lt;li&gt;A. Augment Top 10%&lt;/li&gt;
+&lt;li&gt;B. TPT with Top 10%&lt;/li&gt;
+&lt;li&gt;C. Self-Supervised Retrieval (Inspired by DinoV2) [&lt;a class="link" href="#ref-dinov2" &gt;6&lt;/a&gt;]&lt;/li&gt;
+&lt;li&gt;D. TNT (Recreate the paper) [&lt;a class="link" href="#ref-dinov2" &gt;5&lt;/a&gt;]&lt;/li&gt;
+&lt;li&gt;E. TNT with Top 10%&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;</description></item><item><title>Kiwi Recon</title><link>https://sa1g.github.io/p/kiwi-recon/</link><pubDate>Wed, 14 Feb 2024 01:00:00 +0000</pubDate><guid>https://sa1g.github.io/p/kiwi-recon/</guid><description>&lt;p&gt;&lt;a class="link" href="https://github.com/sa1g/kiwi-recon" target="_blank" rel="noopener"
+&gt;Project Link&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;This project, developed for the course of &lt;em&gt;Signal, Image and Video&lt;/em&gt; focuses on verifying the possiblity to estimate the size of kiwi-fruits from 2D images taken directly on the field, using Machine Learning as little as possible (&amp;ldquo;only&amp;rdquo; for getting the masks).
+The application of this software could be beneficial for farmers that want to measure the performances of their land, this is just the prototype of what it could be possible to do, such as visualize the production quality identifying plant lines, orchards and, if the software is used by many farmers it could be useful to improve quality, production quantity and research about those.&lt;/p&gt;
+&lt;p&gt;More infos in the &lt;a class="link" href="https://github.com/sa1g/kiwi-recon/blob/main/project%20report.pdf" target="_blank" rel="noopener"
+&gt;Report&lt;/a&gt;.&lt;/p&gt;
+&lt;div style="display: flex; justify-content: center; gap: 40px; align-items: center;"&gt;
+&lt;div style="text-align: center;"&gt;
+&lt;a href="https://github.com/sa1g/kiwi-recon/blob/main/project%20report.pdf"&gt;
+&lt;img src="image.png" width="250"/&gt;
+&lt;/a&gt;
+&lt;p&gt;Click to download report&lt;/p&gt;
+&lt;/div&gt;
+&lt;div style="text-align: center;"&gt;
+&lt;a href="https://github.com/sa1g/kiwi-recon/blob/main/slides.pdf"&gt;
+&lt;img src="image1.png" width="250"/&gt;
+&lt;/a&gt;
+&lt;p&gt;Click to download slides&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;blockquote&gt;
+&lt;p&gt;This project was fun.
+— &lt;cite&gt;E&lt;/cite&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id="future-works"&gt;Future Works
+&lt;/h2&gt;&lt;p&gt;This project could be improved a lot and sent to production (it wasn&amp;rsquo;t a goal for the exam, so I didn&amp;rsquo;t focus on it), some of the improvements could be:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Use a better (faster, lighter) model for the masks&lt;/li&gt;
+&lt;li&gt;Get more data (and augmentation)&lt;/li&gt;
+&lt;li&gt;Model the size estimator instead of making everything by hand&lt;/li&gt;
+&lt;li&gt;Model the fruit &lt;em&gt;filtering&lt;/em&gt; that removes the fruits that are not in the correct position for measurement - here it could be interesting to see if it&amp;rsquo;s possible to model it so that it can estimate the size of the fruit even if it&amp;rsquo;s not in the correct position..pretty hard to do tho.&lt;/li&gt;
+&lt;/ul&gt;</description></item><item><title>Multi-Agent Policy RL - AI Economist</title><link>https://sa1g.github.io/p/map-rl/</link><pubDate>Sun, 11 Jun 2023 01:00:00 +0000</pubDate><guid>https://sa1g.github.io/p/map-rl/</guid><description>&lt;p&gt;&lt;a class="link" href="https://github.com/sa1g/multi-agent-policy-rl" target="_blank" rel="noopener"
+&gt;Project Repo&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;The idea of this project is to train multiple agents in the &lt;a class="link" href="https://arxiv.org/abs/2108.02755" target="_blank" rel="noopener"
+&gt;AI Economist&lt;/a&gt; using &lt;a class="link" href="https://arxiv.org/abs/1707.06347" target="_blank" rel="noopener"
+&gt;PPO v1&lt;/a&gt; and &lt;a class="link" href="https://arxiv.org/abs/2012.07723" target="_blank" rel="noopener"
+&gt;Decision Trees with Q-Learning&lt;/a&gt; concurrently, to have a fast way to verify the capabilities of the DT in a complex, competitive, scenario. As no existing framework supports batch and online training algos concurrently, I implemented this basic framework.&lt;/p&gt;
+&lt;p&gt;The issue that different algorithms may have different training speeds is not addressed in this project, developments in this direction are welcome. Currently all algos get the same amount of data. Online algorithms are trained in an online fashion, after each batch of data is collected, and before updating the agents of the batch algorithms.&lt;/p&gt;
+&lt;p&gt;To make this project run faster, data gatering is distributed across multiple processes (&lt;code&gt;fork&lt;/code&gt;), and the training is done in a single process. As the project was developed before I learnt about &lt;code&gt;mpi&lt;/code&gt; and &lt;code&gt;tensorboard&lt;/code&gt;, it does not use them, and much stuff is hardcoded. A full rewrite could be interesting, also to add the missing feature said above. At the time I tried to use &lt;code&gt;ray&lt;/code&gt; to distribute the training, but I wasn&amp;rsquo;t able to make it work, so I wrote everything from scratch. The code is not very clean, but it works.&lt;/p&gt;
+&lt;p&gt;Training scheme for the multi-algorithm training management:&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://sa1g.github.io/p/map-rl/onoff1.png"
+width="352"
+height="764"
+srcset="https://sa1g.github.io/p/map-rl/onoff1_hu_c660f2097489a994.png 480w, https://sa1g.github.io/p/map-rl/onoff1_hu_8f211db9ff06f49.png 1024w"
+loading="lazy"
+alt="Training Algorithms"
+class="gallery-image"
+data-flex-grow="46"
+data-flex-basis="110px"
+&gt;&lt;/p&gt;</description></item></channel></rss>

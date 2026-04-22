@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Pin on Ettore Saggiorato - Sa1g</title><link>https://sa1g.github.io/categories/pin/</link><description>Recent content in Pin on Ettore Saggiorato - Sa1g</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Sun, 09 Feb 2025 01:00:00 +0000</lastBuildDate><atom:link href="https://sa1g.github.io/categories/pin/index.xml" rel="self" type="application/rss+xml"/><item><title>EvoMusic</title><link>https://sa1g.github.io/p/evo-music/</link><pubDate>Sun, 09 Feb 2025 01:00:00 +0000</pubDate><guid>https://sa1g.github.io/p/evo-music/</guid><description>&lt;p&gt;&lt;a class="link" href="https://github.com/sa1g/multi-agent-policy-rl" target="_blank" rel="noopener"
+&gt;Project Repo&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Made in collaboration with &lt;a class="link" href="https://github.com/DavidC001" target="_blank" rel="noopener"
+&gt;Davide&lt;/a&gt;, &lt;a class="link" href="https://github.com/lorenzoorsingher" target="_blank" rel="noopener"
+&gt;Lorenzo&lt;/a&gt; and &lt;a class="link" href="https://github.com/blauer4" target="_blank" rel="noopener"
+&gt;Laurence&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;EvoMusic is an adaptive music generation system designed to evolve music in alignment with user preferences. By analyzing user interactions, it continuously refines its understanding of musical tastes and generates personalized compositions.&lt;/p&gt;
+&lt;p&gt;At its core, EvoMusic combines a music scoring mechanism, user feedback modeling, conditional music generation, and evolutionary strategies. The system follows a loop where it evolves music based on inferred preferences, generates a playlist, collects feedback, and fine-tunes its understanding of user tastes. This iterative process ensures that the music adapts dynamically to each user.&lt;/p&gt;
+&lt;div style="display: flex; justify-content: center; gap: 40px; align-items: center;"&gt;
+&lt;div style="text-align: center;"&gt;
+&lt;a href="https://github.com/sa1g/EvoMusic/blob/main/EvoMusic_report.pdf"&gt;
+&lt;img src="image.png" width="250"/&gt;
+&lt;/a&gt;
+&lt;p&gt;Click to download report&lt;/p&gt;
+&lt;/div&gt;
+&lt;div style="text-align: center;"&gt;
+&lt;a href="https://github.com/sa1g/EvoMusic/blob/main/slides.pdf"&gt;
+&lt;img src="image1.png" width="250"/&gt;
+&lt;/a&gt;
+&lt;p&gt;Click to download slides&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;</description></item><item><title>GPU Computing</title><link>https://sa1g.github.io/p/gpu-computing/</link><pubDate>Sat, 01 Feb 2025 01:00:00 +0000</pubDate><guid>https://sa1g.github.io/p/gpu-computing/</guid><description>&lt;p&gt;&lt;a class="link" href="https://github.com/sa1g/gpu-computing" target="_blank" rel="noopener"
+&gt;Project Repo&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;These assignments are about learning the basics of GPU programming using CUDA. In all assignment we benchmark non-symmetric matrices of size $N \times N$, where $N$ is a power of 2, with different kernels and block sizes.&lt;/p&gt;
+&lt;p align="center"&gt;
+&lt;a href="https://github.com/sa1g/gpu-computing/blob/main/A3/report/stitched_report.pdf"&gt;&lt;img src="image.png" width="250"/&gt;&lt;/a&gt;
+&lt;/p&gt;
+&lt;p align="center"&gt;
+Click to download report
+&lt;/p&gt;
+&lt;h2 id="first-assignment"&gt;First Assignment
+&lt;/h2&gt;&lt;p&gt;Develop a few algorithms to transpose the matrix in CPU, measure effective bandwidth under different compiler optimizations (-O0, -O1, -O2, -O3), analyze cache behavior and efficiency.&lt;/p&gt;
+&lt;h2 id="second-assignment"&gt;Second Assignment
+&lt;/h2&gt;&lt;p&gt;Develop a few algorithms to transpose the matrix in GPU, measure effective bandwidth and efficiency.
+The developed algorithms are:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;simple transposition&lt;/li&gt;
+&lt;li&gt;with shared memory&lt;/li&gt;
+&lt;li&gt;with shared memory and coalesced memory access&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Results were also compared with the Copy of the matrix in GPU, to compare to the &lt;em&gt;simplest&lt;/em&gt; algorithm we could use.&lt;/p&gt;
+&lt;h2 id="third-assignment"&gt;Third Assignment
+&lt;/h2&gt;&lt;p&gt;Develop some algorithms to transpose the matrix in GPU, using NVIDIA&amp;rsquo;s Cooperative Groups. Compare the results against cuBLAS.
+This wasn&amp;rsquo;t straightforward as Cooperative Groups are not a good idea for dense matrix transposition, so I had to &lt;em&gt;work against&lt;/em&gt; all the things that were studied during the course.
+Three algorithms were developed (ignoring copy):&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Intra-block synchronization (good old &lt;code&gt;__syncthreads()&lt;/code&gt;)&lt;/li&gt;
+&lt;li&gt;Intra-block synchronization coalesced&lt;/li&gt;
+&lt;li&gt;Inter-block synchronization (grid-wide synch, expected and demonstrated slower)&lt;/li&gt;
+&lt;/ul&gt;</description></item></channel></rss>

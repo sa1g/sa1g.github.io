@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>CLIP on Ettore Saggiorato - Sa1g</title><link>https://sa1g.github.io/tags/clip/</link><description>Recent content in CLIP on Ettore Saggiorato - Sa1g</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Tue, 10 Jun 2025 01:00:00 +0000</lastBuildDate><atom:link href="https://sa1g.github.io/tags/clip/index.xml" rel="self" type="application/rss+xml"/><item><title>CLIP Test Time Adaptatoin</title><link>https://sa1g.github.io/p/nlu/</link><pubDate>Tue, 10 Jun 2025 01:00:00 +0000</pubDate><guid>https://sa1g.github.io/p/nlu/</guid><description>&lt;p&gt;&lt;a class="link" href="https://github.com/sa1g/deep-learning-unitn" target="_blank" rel="noopener"
+&gt;Project Repo&lt;/a&gt;&lt;/p&gt;
+&lt;h1 id="-test-time-adaptation-tta-for-image-classification"&gt;🖼️ Test-Time Adaptation (TTA) for image classification
+&lt;/h1&gt;&lt;p&gt;In this project, we work on &lt;strong&gt;Test-Time Adaptation (TTA)&lt;/strong&gt;, which has recently gained traction due to its ability to enhance model performance without requiring access to training data. It involves improving the robustness of a pre-trained neural network to a test dataset, possibly by improving the network’s predictions on one test sample at a time.&lt;/p&gt;
+&lt;p&gt;In particular, we focus on &lt;strong&gt;TTA for image classification&lt;/strong&gt;, particularly using &lt;strong&gt;CLIP&lt;/strong&gt; [&lt;a class="link" href="#ref-clip2021" &gt;2&lt;/a&gt;] with &lt;strong&gt;TPT&lt;/strong&gt; [&lt;a class="link" href="#ref-tpt2022" &gt;3&lt;/a&gt;]. Our approach involves adapting the model on &lt;strong&gt;single-image test instances&lt;/strong&gt;, with the model being reset to its pre-trained state after each instance. This resembles &lt;strong&gt;TTIA&lt;/strong&gt;, keeping the constraint of no retention of prior test-time knowledge (between batches, so between images).&lt;/p&gt;
+&lt;!--- visualize image using html formatting, so that i can scale it properly --&gt;
+&lt;p align="center"&gt;
+&lt;img src="https://raw.githubusercontent.com/sa1g/deep-learning-unitn/refs/heads/main/plot/tpt.png" alt="Test-Time Prompt Tuning (TPT) for CLIP" title="Test-Time Prompt Tuning (TPT) for CLIP" width="600" class="center"/&gt;&lt;br&gt;
+&lt;em&gt;Figure 1: Test-Time Prompt Tuning (TPT) for CLIP&lt;/em&gt;
+&lt;/p&gt;
+&lt;p&gt;Additionally, we experiment with different techiqnues and approaches to try improving either the accuracy or inference speed of the model.&lt;/p&gt;
+&lt;h2 id="-setup"&gt;🚀 Setup
+&lt;/h2&gt;&lt;p&gt;The project is entirely self contained inside the jupyter notebook &lt;code&gt;report.ipynb&lt;/code&gt;. It can be run using &lt;a class="link" href="https://colab.research.google.com/" target="_blank" rel="noopener"
+&gt;Google Colab&lt;/a&gt;.&lt;/p&gt;
+&lt;h2 id="-project-overview"&gt;🧠 Project Overview
+&lt;/h2&gt;&lt;ol&gt;
+&lt;li&gt;Baseline - ZeroShot CLIP&lt;/li&gt;
+&lt;li&gt;Reproducing TPT:
+&lt;ul&gt;
+&lt;li&gt;Reproduce TPT + simplified CoOp (without pretraining) (&lt;strong&gt;Our contribution&lt;/strong&gt;)&lt;/li&gt;
+&lt;li&gt;Using OpenAI weights and OpenCLIP implementation
+&lt;ul&gt;
+&lt;li&gt;Compare zero-shot CLIP OpenAI (weights and implementation) with OpenCLIP (weights and implementation)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Using &lt;code&gt;Kornia&lt;/code&gt; instead of &lt;code&gt;AugMix&lt;/code&gt; / &lt;code&gt;torchvision.transforms&lt;/code&gt; (&lt;strong&gt;Extra: Our contribution&lt;/strong&gt;)
+&lt;ul&gt;
+&lt;li&gt;Recreate the AugMix pipeline in Kornia&lt;/li&gt;
+&lt;li&gt;Kornia is faster and can directly run on the GPU&lt;/li&gt;
+&lt;li&gt;Benchmarking the difference&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Trying to get better at TTA (&lt;strong&gt;Our contribution&lt;/strong&gt;)
+&lt;ul&gt;
+&lt;li&gt;A. Augment Top 10%&lt;/li&gt;
+&lt;li&gt;B. TPT with Top 10%&lt;/li&gt;
+&lt;li&gt;C. Self-Supervised Retrieval (Inspired by DinoV2) [&lt;a class="link" href="#ref-dinov2" &gt;6&lt;/a&gt;]&lt;/li&gt;
+&lt;li&gt;D. TNT (Recreate the paper) [&lt;a class="link" href="#ref-dinov2" &gt;5&lt;/a&gt;]&lt;/li&gt;
+&lt;li&gt;E. TNT with Top 10%&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;</description></item><item><title>Advanced Computer Vision - MobileCLIP</title><link>https://sa1g.github.io/p/acv/</link><pubDate>Thu, 20 Feb 2025 01:00:00 +0000</pubDate><guid>https://sa1g.github.io/p/acv/</guid><description>&lt;p&gt;&lt;a class="link" href="https://github.com/sa1g/advanced-cv" target="_blank" rel="noopener"
+&gt;Project Repo&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Made in collaboration with &lt;a class="link" href="https://github.com/IlPoiana" target="_blank" rel="noopener"
+&gt;Emanuele&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;This is not strictly a project, but rather a case study on how MobileCLIP was developed, focusing on understanding the architecture, training and dataset creation, and the overall process of building a lightweight CLIP model for mobile devices. Possible improvements were proposed.&lt;/p&gt;
+&lt;p align="center"&gt;
+&lt;a href="https://github.com/sa1g/advanced-cv/blob/main/MobileClip_presentation.pdf"&gt;&lt;img src="image.png" width="250"/&gt;&lt;/a&gt;
+&lt;/p&gt;
+&lt;p align="center"&gt;
+Click to download presentation
+&lt;/p&gt;
+&lt;h3 id="training"&gt;Training
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;TinyCLIP distillation of MobileCLIP&lt;/strong&gt;
+&lt;ul&gt;
+&lt;li&gt;Reduce the model parameter number, while keeping most of the original accuracy using TinyCLIP.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Improving synthetic captions&lt;/strong&gt;
+&lt;ul&gt;
+&lt;li&gt;Regenerate captions if they are too similar in the reinforced dataset.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Sigmoid self-attention&lt;/strong&gt;
+&lt;ul&gt;
+&lt;li&gt;Substitute softmax with sigmoid self-attention in the self-attention layers.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id="inference"&gt;Inference
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;PuMer adaptation to MobileCLIP&lt;/strong&gt;
+&lt;ul&gt;
+&lt;li&gt;PuMer adopts token pruning &lt;strong&gt;(TIP)&lt;/strong&gt; and merging &lt;strong&gt;(MAM)&lt;/strong&gt; in ViLT architecture to improve latency without compromising model performance.&lt;/li&gt;
+&lt;li&gt;MobileCLIP differs from ViLT from a structural perspective, but modality aware merging (MAM) still could lead to small latency improvements.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Token Ranking Pruning&lt;/strong&gt;
+&lt;ul&gt;
+&lt;li&gt;Patch Ranking original purpose was to &lt;strong&gt;prune image patches&lt;/strong&gt; in tranformer based CLIP models &lt;strong&gt;through a predictor&lt;/strong&gt; to reduce the number of tokens processed through the image and text encoder.&lt;/li&gt;
+&lt;li&gt;Adapting this technique to the MobileCLIP text encoder could result in similar improvements to the paper implementation.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Dynamic Input Resolution&lt;/strong&gt;
+&lt;ul&gt;
+&lt;li&gt;Adjust input resolution on a per-sample basis: low-resolution inference for simpler images, high-resolution for more complex ones.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;</description></item></channel></rss>

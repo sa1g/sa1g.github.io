@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>SSO on Ettore Saggiorato - Sa1g</title><link>https://sa1g.github.io/tags/sso/</link><description>Recent content in SSO on Ettore Saggiorato - Sa1g</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Tue, 02 Sep 2025 01:00:00 +0000</lastBuildDate><atom:link href="https://sa1g.github.io/tags/sso/index.xml" rel="self" type="application/rss+xml"/><item><title>FoundryVTT Header Authentication</title><link>https://sa1g.github.io/p/foundry-vtt-header-auth/</link><pubDate>Tue, 02 Sep 2025 01:00:00 +0000</pubDate><guid>https://sa1g.github.io/p/foundry-vtt-header-auth/</guid><description>&lt;p&gt;It was mostly a learning experience as I never touched header-based authentication before, but I needed this to work and the plugin didn&amp;rsquo;t support it.&lt;/p&gt;
+&lt;p&gt;I&amp;rsquo;ve added the documentation on how to make it work with Authentik, both Authentik, Traefik and FoundryVTT plugin configurations. The owner of the plugin was very kind and added support for configuring the &lt;code&gt;separator&lt;/code&gt; that Authentik needed.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a class="link" href="https://github.com/MaienM/foundry-vtt-header-auth" target="_blank" rel="noopener"
+&gt;Project Repo&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class="link" href="https://github.com/MaienM/foundry-vtt-header-auth/pull/1" target="_blank" rel="noopener"
+&gt;PR Link&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</description></item></channel></rss>

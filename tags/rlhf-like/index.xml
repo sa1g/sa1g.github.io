@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>RLHF Like on Ettore Saggiorato - Sa1g</title><link>https://sa1g.github.io/tags/rlhf-like/</link><description>Recent content in RLHF Like on Ettore Saggiorato - Sa1g</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Sun, 09 Feb 2025 01:00:00 +0000</lastBuildDate><atom:link href="https://sa1g.github.io/tags/rlhf-like/index.xml" rel="self" type="application/rss+xml"/><item><title>EvoMusic</title><link>https://sa1g.github.io/p/evo-music/</link><pubDate>Sun, 09 Feb 2025 01:00:00 +0000</pubDate><guid>https://sa1g.github.io/p/evo-music/</guid><description>&lt;p&gt;&lt;a class="link" href="https://github.com/sa1g/multi-agent-policy-rl" target="_blank" rel="noopener"
+&gt;Project Repo&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Made in collaboration with &lt;a class="link" href="https://github.com/DavidC001" target="_blank" rel="noopener"
+&gt;Davide&lt;/a&gt;, &lt;a class="link" href="https://github.com/lorenzoorsingher" target="_blank" rel="noopener"
+&gt;Lorenzo&lt;/a&gt; and &lt;a class="link" href="https://github.com/blauer4" target="_blank" rel="noopener"
+&gt;Laurence&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;EvoMusic is an adaptive music generation system designed to evolve music in alignment with user preferences. By analyzing user interactions, it continuously refines its understanding of musical tastes and generates personalized compositions.&lt;/p&gt;
+&lt;p&gt;At its core, EvoMusic combines a music scoring mechanism, user feedback modeling, conditional music generation, and evolutionary strategies. The system follows a loop where it evolves music based on inferred preferences, generates a playlist, collects feedback, and fine-tunes its understanding of user tastes. This iterative process ensures that the music adapts dynamically to each user.&lt;/p&gt;
+&lt;div style="display: flex; justify-content: center; gap: 40px; align-items: center;"&gt;
+&lt;div style="text-align: center;"&gt;
+&lt;a href="https://github.com/sa1g/EvoMusic/blob/main/EvoMusic_report.pdf"&gt;
+&lt;img src="image.png" width="250"/&gt;
+&lt;/a&gt;
+&lt;p&gt;Click to download report&lt;/p&gt;
+&lt;/div&gt;
+&lt;div style="text-align: center;"&gt;
+&lt;a href="https://github.com/sa1g/EvoMusic/blob/main/slides.pdf"&gt;
+&lt;img src="image1.png" width="250"/&gt;
+&lt;/a&gt;
+&lt;p&gt;Click to download slides&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;</description></item></channel></rss>

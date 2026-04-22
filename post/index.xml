@@ -1,0 +1,278 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Posts on Ettore Saggiorato - Sa1g</title><link>https://sa1g.github.io/post/</link><description>Recent content in Posts on Ettore Saggiorato - Sa1g</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Fri, 10 Apr 2026 01:00:00 +0000</lastBuildDate><atom:link href="https://sa1g.github.io/post/index.xml" rel="self" type="application/rss+xml"/><item><title>Advanced Topics of Machine Learning and Optimization</title><link>https://sa1g.github.io/p/atmlo/</link><pubDate>Fri, 10 Apr 2026 01:00:00 +0000</pubDate><guid>https://sa1g.github.io/p/atmlo/</guid><description>&lt;p&gt;&lt;a class="link" href="https://github.com/sa1g/atmlo" target="_blank" rel="noopener"
+&gt;Project Repo&lt;/a&gt;&lt;/p&gt;
+&lt;h1 id="improving-concept-bottleneck-models-with-rlhf-style-feedback"&gt;Improving Concept Bottleneck Models with RLHF-style Feedback
+&lt;/h1&gt;&lt;p&gt;This project investigates how to improve Concept Bottleneck Models (CBMs) with RLHF-style feedback in a human-in-the-loop setting. Using the CUB-200-2011 bird dataset (112 visual concepts), the work starts from deliberately weakened CBMs created by removing important concepts and reducing training data, then trains a Human Decision Model (HDM) to simulate downstream human feedback. The core contribution is an RLHF-inspired fine-tuning pipeline, including custom concept-quality rewards (CAC/CAHC) and a PPO-based optimization setup, to recover missing concept quality and improve final predictions. Experiments show that the approach is feasible: RLHF can improve degraded models (up to about +17% in some settings), though it still trails standard supervised fine-tuning and remains roughly 10% below a fully trained baseline in harder cases. The study also finds that heuristic reward signals are more useful than similarity metrics like cosine/EMD in this context, and that some CUB concepts appear redundant for downstream classification.&lt;/p&gt;
+&lt;p&gt;More details can be found in the report linked below.&lt;/p&gt;
+&lt;div align="center" style="display: flex; justify-content: center; gap: 40px; flex-wrap: wrap;"&gt;
+&lt;div&gt;
+&lt;a href="https://github.com/sa1g/atmlo/blob/master/report/report.pdf"&gt;
+&lt;img src="https://raw.githubusercontent.com/sa1g/atmlo/refs/heads/master/report/thumb.png" width="250"/&gt;
+&lt;/a&gt;
+&lt;p align="center"&gt;Click to download the report&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;h2 id="reproducibility"&gt;Reproducibility
+&lt;/h2&gt;&lt;p&gt;The code is in &lt;code&gt;/src&lt;/code&gt;. To reproduce the results in the report you&amp;rsquo;ll need fast hardware and a lot of patience, if you have a slurm cluster use job-arrays (an example is present in the repo). Most experiments are setup in &lt;code&gt;/src/common/experiment_configs.py&lt;/code&gt;, to select one of them simply run: &lt;code&gt;python main.py -pc &amp;lt;experiment-name&amp;gt;&lt;/code&gt;. Multiple arguments are available to customize the training, see &lt;code&gt;python main.py -h&lt;/code&gt; for details. The code is structured to allow easy addition of new experiments, reward functions, and training setups.&lt;/p&gt;
+&lt;p&gt;The code won&amp;rsquo;t be refactored even if it needs it. Currently configs for supervised training, fine-tuning of both CBM and HDM, and RLHF-style training are all mixed together, this makes everything a bit confusing, but it works. This happened because I was aiming to quickly test different ideas and setups, and I didn&amp;rsquo;t want to spend time refactoring the code.&lt;/p&gt;
+&lt;p&gt;The coolest thing over the code, except for the &lt;em&gt;custom&lt;/em&gt; PPO behavior is how the supervised training cycle is written to avoid needing to rewrite it for the different training stages (CBM, HDM, and fine-tuning). Most of the same logic is kept in the same place, simply by using basic inheritance and a bit of abstraction.&lt;/p&gt;
+&lt;h2 id="ack"&gt;Ack
+&lt;/h2&gt;&lt;p&gt;If you are reading this well&amp;hellip;have fun! - Sa1g&lt;/p&gt;</description></item><item><title>mythographer-5e</title><link>https://sa1g.github.io/p/mythographer-5e/</link><pubDate>Sat, 17 Jan 2026 01:00:00 +0000</pubDate><guid>https://sa1g.github.io/p/mythographer-5e/</guid><description>&lt;ul&gt;
+&lt;li&gt;&lt;a class="link" href="https://github.com/sa1g/dnd-typst-template" target="_blank" rel="noopener"
+&gt;Project Repo&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class="link" href="https://typst.app/universe/package/mythographer-5e" target="_blank" rel="noopener"
+&gt;Typst Universe&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Typst template for typsetting documents in the style of the fifth edition of Dungeon&amp;amp;Dragons.
+This package has been heavily inspired by the awesome work done by the &lt;em&gt;rpgTex&lt;/em&gt; team on their &lt;a class="link" href="https://github.com/rpgtex/DND-5e-LaTeX-Template" target="_blank" rel="noopener"
+&gt;DND-5e-LaTeX-Template&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;It supports 99% of D&amp;amp;D&amp;rsquo;s official manual features, automatic translations and it&amp;rsquo;s highly customizable.&lt;/p&gt;</description></item><item><title>FoundryVTT Header Authentication</title><link>https://sa1g.github.io/p/foundry-vtt-header-auth/</link><pubDate>Tue, 02 Sep 2025 01:00:00 +0000</pubDate><guid>https://sa1g.github.io/p/foundry-vtt-header-auth/</guid><description>&lt;p&gt;It was mostly a learning experience as I never touched header-based authentication before, but I needed this to work and the plugin didn&amp;rsquo;t support it.&lt;/p&gt;
+&lt;p&gt;I&amp;rsquo;ve added the documentation on how to make it work with Authentik, both Authentik, Traefik and FoundryVTT plugin configurations. The owner of the plugin was very kind and added support for configuring the &lt;code&gt;separator&lt;/code&gt; that Authentik needed.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a class="link" href="https://github.com/MaienM/foundry-vtt-header-auth" target="_blank" rel="noopener"
+&gt;Project Repo&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class="link" href="https://github.com/MaienM/foundry-vtt-header-auth/pull/1" target="_blank" rel="noopener"
+&gt;PR Link&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</description></item><item><title>Natural Language Understanding</title><link>https://sa1g.github.io/p/nlu/</link><pubDate>Tue, 15 Jul 2025 01:00:00 +0000</pubDate><guid>https://sa1g.github.io/p/nlu/</guid><description>&lt;p&gt;&lt;a class="link" href="https://github.com/sa1g/natural-language-understanding" target="_blank" rel="noopener"
+&gt;Project Repo&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id="lm---language-modeling"&gt;LM - Language Modeling
+&lt;/h2&gt;&lt;p&gt;The objective is to implement various techniques that can enhance the performance of a simple language model for next-word prediction and to understand how each of these techniques influences the model. Experiment with the model architecture, substituting the RNN with an LSTM block, using different optimizers, and apply different regularization techniques: Dropout, Weight Tying, Variational Dropout, and Non-Monotonically Triggered Average SGD.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Dataset&lt;/strong&gt;: PennTreeBank.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Metrics&lt;/strong&gt;: Perplxity.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="nlu---natural-language-understanding"&gt;NLU - Natural Language Understanding
+&lt;/h2&gt;&lt;p&gt;The objective for this assignment is to jointly perform slot filling and intent prediction on the ATIS dataset. Intent prediction requires the model to classify the whole sequence to a predefined set of possible user intentions. Slot filling consists of identifying and classifying the relevant entities in the sequence, used to parameterize the user intent. For the first part, we are tasked with implementing a functioning system using an LSTM backbone for the word token representations. For the second part, we are tasked with finetuning a pre-trained transformer BERT encoder to do the same task. The detail that needs more attention is about managing sub-tokenization.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Dataset&lt;/strong&gt;: Atis.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Metrics&lt;/strong&gt;: Accuracy (intention classification), F1 (slot filling).&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="sa---sentiment-analysis"&gt;SA - Sentiment Analysis
+&lt;/h2&gt;&lt;p&gt;Fine-tune BERT for the Aspect-based Sentiment Analysis task regarding the extraction of the aspect terms only. This assignment is very similar to NLU, the main difference is how the labels are managed (all of them are either &lt;code&gt;O&lt;/code&gt; or &lt;code&gt;T&lt;/code&gt;), and adapting &lt;a class="link" href="https://github.com/lixin4ever/E2E-TBSA/blob/master/evals.py" target="_blank" rel="noopener"
+&gt;SemEval&lt;/a&gt; for this task.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Dataset&lt;/strong&gt;: SemEval2014, laptop, task 4.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Metrics&lt;/strong&gt;: F1, Precision and Recall.&lt;/li&gt;
+&lt;/ul&gt;</description></item><item><title>Automated Planning</title><link>https://sa1g.github.io/p/automated-planning/</link><pubDate>Fri, 13 Jun 2025 01:00:00 +0000</pubDate><guid>https://sa1g.github.io/p/automated-planning/</guid><description>&lt;p&gt;&lt;a class="link" href="https://github.com/sa1g/automated-planning" target="_blank" rel="noopener"
+&gt;Project Repo&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;This project investigates the modeling of planning problems using PDDL and HDDL, with planner execution facilitated through planutils &lt;a class="link" href="https://github.com/AI-Planning/planutils" target="_blank" rel="noopener"
+&gt;[1]&lt;/a&gt; and Panda &lt;a class="link" href="https://doi.org/10.1007/s13218-020-00699-y" target="_blank" rel="noopener"
+&gt;[2]&lt;/a&gt;. The implementation progresses from foundational classical planning to temporal planning, culminating in robotic system integration via PlanSys2 &lt;a class="link" href="https://arxiv.org/abs/2107.00376" target="_blank" rel="noopener"
+&gt;[3]&lt;/a&gt;. Key challenges addressed include the modeling of limited resources, multi agent coordination, and compatibility with robotic execution frameworks.&lt;/p&gt;
+&lt;p&gt;More info in the report:&lt;/p&gt;
+&lt;p align="center"&gt;
+&lt;a href="https://github.com/sa1g/automated-planning/blob/main/report/report.pdf"&gt;&lt;img src="https://raw.githubusercontent.com/sa1g/automated-planning/refs/heads/main/report/report.png" width="250"/&gt;&lt;/a&gt;
+&lt;/p&gt;
+&lt;p align="center"&gt;
+Click to download report
+&lt;/p&gt;</description></item><item><title>CLIP Test Time Adaptatoin</title><link>https://sa1g.github.io/p/nlu/</link><pubDate>Tue, 10 Jun 2025 01:00:00 +0000</pubDate><guid>https://sa1g.github.io/p/nlu/</guid><description>&lt;p&gt;&lt;a class="link" href="https://github.com/sa1g/deep-learning-unitn" target="_blank" rel="noopener"
+&gt;Project Repo&lt;/a&gt;&lt;/p&gt;
+&lt;h1 id="-test-time-adaptation-tta-for-image-classification"&gt;🖼️ Test-Time Adaptation (TTA) for image classification
+&lt;/h1&gt;&lt;p&gt;In this project, we work on &lt;strong&gt;Test-Time Adaptation (TTA)&lt;/strong&gt;, which has recently gained traction due to its ability to enhance model performance without requiring access to training data. It involves improving the robustness of a pre-trained neural network to a test dataset, possibly by improving the network’s predictions on one test sample at a time.&lt;/p&gt;
+&lt;p&gt;In particular, we focus on &lt;strong&gt;TTA for image classification&lt;/strong&gt;, particularly using &lt;strong&gt;CLIP&lt;/strong&gt; [&lt;a class="link" href="#ref-clip2021" &gt;2&lt;/a&gt;] with &lt;strong&gt;TPT&lt;/strong&gt; [&lt;a class="link" href="#ref-tpt2022" &gt;3&lt;/a&gt;]. Our approach involves adapting the model on &lt;strong&gt;single-image test instances&lt;/strong&gt;, with the model being reset to its pre-trained state after each instance. This resembles &lt;strong&gt;TTIA&lt;/strong&gt;, keeping the constraint of no retention of prior test-time knowledge (between batches, so between images).&lt;/p&gt;
+&lt;!--- visualize image using html formatting, so that i can scale it properly --&gt;
+&lt;p align="center"&gt;
+&lt;img src="https://raw.githubusercontent.com/sa1g/deep-learning-unitn/refs/heads/main/plot/tpt.png" alt="Test-Time Prompt Tuning (TPT) for CLIP" title="Test-Time Prompt Tuning (TPT) for CLIP" width="600" class="center"/&gt;&lt;br&gt;
+&lt;em&gt;Figure 1: Test-Time Prompt Tuning (TPT) for CLIP&lt;/em&gt;
+&lt;/p&gt;
+&lt;p&gt;Additionally, we experiment with different techiqnues and approaches to try improving either the accuracy or inference speed of the model.&lt;/p&gt;
+&lt;h2 id="-setup"&gt;🚀 Setup
+&lt;/h2&gt;&lt;p&gt;The project is entirely self contained inside the jupyter notebook &lt;code&gt;report.ipynb&lt;/code&gt;. It can be run using &lt;a class="link" href="https://colab.research.google.com/" target="_blank" rel="noopener"
+&gt;Google Colab&lt;/a&gt;.&lt;/p&gt;
+&lt;h2 id="-project-overview"&gt;🧠 Project Overview
+&lt;/h2&gt;&lt;ol&gt;
+&lt;li&gt;Baseline - ZeroShot CLIP&lt;/li&gt;
+&lt;li&gt;Reproducing TPT:
+&lt;ul&gt;
+&lt;li&gt;Reproduce TPT + simplified CoOp (without pretraining) (&lt;strong&gt;Our contribution&lt;/strong&gt;)&lt;/li&gt;
+&lt;li&gt;Using OpenAI weights and OpenCLIP implementation
+&lt;ul&gt;
+&lt;li&gt;Compare zero-shot CLIP OpenAI (weights and implementation) with OpenCLIP (weights and implementation)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Using &lt;code&gt;Kornia&lt;/code&gt; instead of &lt;code&gt;AugMix&lt;/code&gt; / &lt;code&gt;torchvision.transforms&lt;/code&gt; (&lt;strong&gt;Extra: Our contribution&lt;/strong&gt;)
+&lt;ul&gt;
+&lt;li&gt;Recreate the AugMix pipeline in Kornia&lt;/li&gt;
+&lt;li&gt;Kornia is faster and can directly run on the GPU&lt;/li&gt;
+&lt;li&gt;Benchmarking the difference&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Trying to get better at TTA (&lt;strong&gt;Our contribution&lt;/strong&gt;)
+&lt;ul&gt;
+&lt;li&gt;A. Augment Top 10%&lt;/li&gt;
+&lt;li&gt;B. TPT with Top 10%&lt;/li&gt;
+&lt;li&gt;C. Self-Supervised Retrieval (Inspired by DinoV2) [&lt;a class="link" href="#ref-dinov2" &gt;6&lt;/a&gt;]&lt;/li&gt;
+&lt;li&gt;D. TNT (Recreate the paper) [&lt;a class="link" href="#ref-dinov2" &gt;5&lt;/a&gt;]&lt;/li&gt;
+&lt;li&gt;E. TNT with Top 10%&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;</description></item><item><title>Advanced Computer Vision - MobileCLIP</title><link>https://sa1g.github.io/p/acv/</link><pubDate>Thu, 20 Feb 2025 01:00:00 +0000</pubDate><guid>https://sa1g.github.io/p/acv/</guid><description>&lt;p&gt;&lt;a class="link" href="https://github.com/sa1g/advanced-cv" target="_blank" rel="noopener"
+&gt;Project Repo&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Made in collaboration with &lt;a class="link" href="https://github.com/IlPoiana" target="_blank" rel="noopener"
+&gt;Emanuele&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;This is not strictly a project, but rather a case study on how MobileCLIP was developed, focusing on understanding the architecture, training and dataset creation, and the overall process of building a lightweight CLIP model for mobile devices. Possible improvements were proposed.&lt;/p&gt;
+&lt;p align="center"&gt;
+&lt;a href="https://github.com/sa1g/advanced-cv/blob/main/MobileClip_presentation.pdf"&gt;&lt;img src="image.png" width="250"/&gt;&lt;/a&gt;
+&lt;/p&gt;
+&lt;p align="center"&gt;
+Click to download presentation
+&lt;/p&gt;
+&lt;h3 id="training"&gt;Training
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;TinyCLIP distillation of MobileCLIP&lt;/strong&gt;
+&lt;ul&gt;
+&lt;li&gt;Reduce the model parameter number, while keeping most of the original accuracy using TinyCLIP.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Improving synthetic captions&lt;/strong&gt;
+&lt;ul&gt;
+&lt;li&gt;Regenerate captions if they are too similar in the reinforced dataset.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Sigmoid self-attention&lt;/strong&gt;
+&lt;ul&gt;
+&lt;li&gt;Substitute softmax with sigmoid self-attention in the self-attention layers.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id="inference"&gt;Inference
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;PuMer adaptation to MobileCLIP&lt;/strong&gt;
+&lt;ul&gt;
+&lt;li&gt;PuMer adopts token pruning &lt;strong&gt;(TIP)&lt;/strong&gt; and merging &lt;strong&gt;(MAM)&lt;/strong&gt; in ViLT architecture to improve latency without compromising model performance.&lt;/li&gt;
+&lt;li&gt;MobileCLIP differs from ViLT from a structural perspective, but modality aware merging (MAM) still could lead to small latency improvements.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Token Ranking Pruning&lt;/strong&gt;
+&lt;ul&gt;
+&lt;li&gt;Patch Ranking original purpose was to &lt;strong&gt;prune image patches&lt;/strong&gt; in tranformer based CLIP models &lt;strong&gt;through a predictor&lt;/strong&gt; to reduce the number of tokens processed through the image and text encoder.&lt;/li&gt;
+&lt;li&gt;Adapting this technique to the MobileCLIP text encoder could result in similar improvements to the paper implementation.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Dynamic Input Resolution&lt;/strong&gt;
+&lt;ul&gt;
+&lt;li&gt;Adjust input resolution on a per-sample basis: low-resolution inference for simpler images, high-resolution for more complex ones.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;</description></item><item><title>EvoMusic</title><link>https://sa1g.github.io/p/evo-music/</link><pubDate>Sun, 09 Feb 2025 01:00:00 +0000</pubDate><guid>https://sa1g.github.io/p/evo-music/</guid><description>&lt;p&gt;&lt;a class="link" href="https://github.com/sa1g/multi-agent-policy-rl" target="_blank" rel="noopener"
+&gt;Project Repo&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Made in collaboration with &lt;a class="link" href="https://github.com/DavidC001" target="_blank" rel="noopener"
+&gt;Davide&lt;/a&gt;, &lt;a class="link" href="https://github.com/lorenzoorsingher" target="_blank" rel="noopener"
+&gt;Lorenzo&lt;/a&gt; and &lt;a class="link" href="https://github.com/blauer4" target="_blank" rel="noopener"
+&gt;Laurence&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;EvoMusic is an adaptive music generation system designed to evolve music in alignment with user preferences. By analyzing user interactions, it continuously refines its understanding of musical tastes and generates personalized compositions.&lt;/p&gt;
+&lt;p&gt;At its core, EvoMusic combines a music scoring mechanism, user feedback modeling, conditional music generation, and evolutionary strategies. The system follows a loop where it evolves music based on inferred preferences, generates a playlist, collects feedback, and fine-tunes its understanding of user tastes. This iterative process ensures that the music adapts dynamically to each user.&lt;/p&gt;
+&lt;div style="display: flex; justify-content: center; gap: 40px; align-items: center;"&gt;
+&lt;div style="text-align: center;"&gt;
+&lt;a href="https://github.com/sa1g/EvoMusic/blob/main/EvoMusic_report.pdf"&gt;
+&lt;img src="image.png" width="250"/&gt;
+&lt;/a&gt;
+&lt;p&gt;Click to download report&lt;/p&gt;
+&lt;/div&gt;
+&lt;div style="text-align: center;"&gt;
+&lt;a href="https://github.com/sa1g/EvoMusic/blob/main/slides.pdf"&gt;
+&lt;img src="image1.png" width="250"/&gt;
+&lt;/a&gt;
+&lt;p&gt;Click to download slides&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;</description></item><item><title>GPU Computing</title><link>https://sa1g.github.io/p/gpu-computing/</link><pubDate>Sat, 01 Feb 2025 01:00:00 +0000</pubDate><guid>https://sa1g.github.io/p/gpu-computing/</guid><description>&lt;p&gt;&lt;a class="link" href="https://github.com/sa1g/gpu-computing" target="_blank" rel="noopener"
+&gt;Project Repo&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;These assignments are about learning the basics of GPU programming using CUDA. In all assignment we benchmark non-symmetric matrices of size $N \times N$, where $N$ is a power of 2, with different kernels and block sizes.&lt;/p&gt;
+&lt;p align="center"&gt;
+&lt;a href="https://github.com/sa1g/gpu-computing/blob/main/A3/report/stitched_report.pdf"&gt;&lt;img src="image.png" width="250"/&gt;&lt;/a&gt;
+&lt;/p&gt;
+&lt;p align="center"&gt;
+Click to download report
+&lt;/p&gt;
+&lt;h2 id="first-assignment"&gt;First Assignment
+&lt;/h2&gt;&lt;p&gt;Develop a few algorithms to transpose the matrix in CPU, measure effective bandwidth under different compiler optimizations (-O0, -O1, -O2, -O3), analyze cache behavior and efficiency.&lt;/p&gt;
+&lt;h2 id="second-assignment"&gt;Second Assignment
+&lt;/h2&gt;&lt;p&gt;Develop a few algorithms to transpose the matrix in GPU, measure effective bandwidth and efficiency.
+The developed algorithms are:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;simple transposition&lt;/li&gt;
+&lt;li&gt;with shared memory&lt;/li&gt;
+&lt;li&gt;with shared memory and coalesced memory access&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Results were also compared with the Copy of the matrix in GPU, to compare to the &lt;em&gt;simplest&lt;/em&gt; algorithm we could use.&lt;/p&gt;
+&lt;h2 id="third-assignment"&gt;Third Assignment
+&lt;/h2&gt;&lt;p&gt;Develop some algorithms to transpose the matrix in GPU, using NVIDIA&amp;rsquo;s Cooperative Groups. Compare the results against cuBLAS.
+This wasn&amp;rsquo;t straightforward as Cooperative Groups are not a good idea for dense matrix transposition, so I had to &lt;em&gt;work against&lt;/em&gt; all the things that were studied during the course.
+Three algorithms were developed (ignoring copy):&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Intra-block synchronization (good old &lt;code&gt;__syncthreads()&lt;/code&gt;)&lt;/li&gt;
+&lt;li&gt;Intra-block synchronization coalesced&lt;/li&gt;
+&lt;li&gt;Inter-block synchronization (grid-wide synch, expected and demonstrated slower)&lt;/li&gt;
+&lt;/ul&gt;</description></item><item><title>Autonomous Software Agents</title><link>https://sa1g.github.io/p/asa/</link><pubDate>Tue, 21 Jan 2025 01:00:00 +0000</pubDate><guid>https://sa1g.github.io/p/asa/</guid><description>&lt;p&gt;&lt;a class="link" href="https://github.com/sa1g/autonomous-software-agents" target="_blank" rel="noopener"
+&gt;Project Repo&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Made in collaboration with &lt;a class="link" href="https://github.com/bertogb23" target="_blank" rel="noopener"
+&gt;Gianluca&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;The project is about creating a multi-agent system that can navigate in a simulated environment, using the &lt;a class="link" href="https://github.com/unitn-ASA/Deliveroo.js.git" target="_blank" rel="noopener"
+&gt;Deliveroo.js&lt;/a&gt; framework. The agents are designed to work together to achieve their goals, and they use PDDL (&lt;a class="link" href="https://github.com/AI-Planning/planutils" target="_blank" rel="noopener"
+&gt;planutils&lt;/a&gt;) for planning their actions.&lt;/p&gt;
+&lt;p&gt;Agents can both be run in a single agent mode or in a multi-agent mode. In the multi-agent mode, agents work together to achieve their goals, and they can communicate with each other to coordinate their actions. The cooperative implementaton tries to find a plan that is optimal for the team, while blocking the best path for adversaries. This solution in kind of yielding, where the agents are willing to sacrifice their own performance for the sake of the team.&lt;/p&gt;
+&lt;p align="center"&gt;
+&lt;img src="24c1_2.png" width="500"/&gt;&lt;/a&gt;
+&lt;/p&gt;
+&lt;p align="center"&gt;
+Example of map analysis. Green is the map. Orange (darker) representsthe best positions to visualize the spawning of new parcels. Blue (darker) represent the most traveled paths.
+&lt;/p&gt;
+&lt;p&gt;To have a better understanding of the maps, static analysis are performed to extract the statically most traveled paths. This information is used to create a heuristic that guides the agents in their planning process. The heuristic is based on the idea that the agents should avoid the most traveled paths, as they are likely to be more congested and less efficient. Also these paths are the ones that adversaries will use to reach their goal and are the ones that we want to block.&lt;/p&gt;
+&lt;p&gt;As the plans are generated by the PDDL server, to improve the performance of the agents, we implemented a caching system that stores the plans generated by the PDDL server. This allows the agents to reuse previously generated plans, which can significantly reduce the time required to generate new plans. Also a loadbalancing system is implemented to distribute the load of the PDDL server across multiple instances. This allows the agents to generate plans more quickly (lower response times) and efficiently, as they can take advantage of the available resources.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Known issues&lt;/strong&gt;: there is a syncronization bug between agent and the deliveroo server. Sometimes commands are not responded by the server, probably due to a limitation of the server itself.&lt;/p&gt;
+&lt;p align="center"&gt;
+&lt;a href="https://github.com/sa1g/autonomous-software-agents/blob/main/presentation.pdf"&gt;&lt;img src="presentation.png" width="250"/&gt;&lt;/a&gt;
+&lt;/p&gt;
+&lt;p align="center"&gt;
+Click to download slides
+&lt;/p&gt;</description></item><item><title>Kiwi Recon</title><link>https://sa1g.github.io/p/kiwi-recon/</link><pubDate>Wed, 14 Feb 2024 01:00:00 +0000</pubDate><guid>https://sa1g.github.io/p/kiwi-recon/</guid><description>&lt;p&gt;&lt;a class="link" href="https://github.com/sa1g/kiwi-recon" target="_blank" rel="noopener"
+&gt;Project Link&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;This project, developed for the course of &lt;em&gt;Signal, Image and Video&lt;/em&gt; focuses on verifying the possiblity to estimate the size of kiwi-fruits from 2D images taken directly on the field, using Machine Learning as little as possible (&amp;ldquo;only&amp;rdquo; for getting the masks).
+The application of this software could be beneficial for farmers that want to measure the performances of their land, this is just the prototype of what it could be possible to do, such as visualize the production quality identifying plant lines, orchards and, if the software is used by many farmers it could be useful to improve quality, production quantity and research about those.&lt;/p&gt;
+&lt;p&gt;More infos in the &lt;a class="link" href="https://github.com/sa1g/kiwi-recon/blob/main/project%20report.pdf" target="_blank" rel="noopener"
+&gt;Report&lt;/a&gt;.&lt;/p&gt;
+&lt;div style="display: flex; justify-content: center; gap: 40px; align-items: center;"&gt;
+&lt;div style="text-align: center;"&gt;
+&lt;a href="https://github.com/sa1g/kiwi-recon/blob/main/project%20report.pdf"&gt;
+&lt;img src="image.png" width="250"/&gt;
+&lt;/a&gt;
+&lt;p&gt;Click to download report&lt;/p&gt;
+&lt;/div&gt;
+&lt;div style="text-align: center;"&gt;
+&lt;a href="https://github.com/sa1g/kiwi-recon/blob/main/slides.pdf"&gt;
+&lt;img src="image1.png" width="250"/&gt;
+&lt;/a&gt;
+&lt;p&gt;Click to download slides&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;blockquote&gt;
+&lt;p&gt;This project was fun.
+— &lt;cite&gt;E&lt;/cite&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id="future-works"&gt;Future Works
+&lt;/h2&gt;&lt;p&gt;This project could be improved a lot and sent to production (it wasn&amp;rsquo;t a goal for the exam, so I didn&amp;rsquo;t focus on it), some of the improvements could be:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Use a better (faster, lighter) model for the masks&lt;/li&gt;
+&lt;li&gt;Get more data (and augmentation)&lt;/li&gt;
+&lt;li&gt;Model the size estimator instead of making everything by hand&lt;/li&gt;
+&lt;li&gt;Model the fruit &lt;em&gt;filtering&lt;/em&gt; that removes the fruits that are not in the correct position for measurement - here it could be interesting to see if it&amp;rsquo;s possible to model it so that it can estimate the size of the fruit even if it&amp;rsquo;s not in the correct position..pretty hard to do tho.&lt;/li&gt;
+&lt;/ul&gt;</description></item><item><title>Multi-Agent Policy RL - AI Economist</title><link>https://sa1g.github.io/p/map-rl/</link><pubDate>Sun, 11 Jun 2023 01:00:00 +0000</pubDate><guid>https://sa1g.github.io/p/map-rl/</guid><description>&lt;p&gt;&lt;a class="link" href="https://github.com/sa1g/multi-agent-policy-rl" target="_blank" rel="noopener"
+&gt;Project Repo&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;The idea of this project is to train multiple agents in the &lt;a class="link" href="https://arxiv.org/abs/2108.02755" target="_blank" rel="noopener"
+&gt;AI Economist&lt;/a&gt; using &lt;a class="link" href="https://arxiv.org/abs/1707.06347" target="_blank" rel="noopener"
+&gt;PPO v1&lt;/a&gt; and &lt;a class="link" href="https://arxiv.org/abs/2012.07723" target="_blank" rel="noopener"
+&gt;Decision Trees with Q-Learning&lt;/a&gt; concurrently, to have a fast way to verify the capabilities of the DT in a complex, competitive, scenario. As no existing framework supports batch and online training algos concurrently, I implemented this basic framework.&lt;/p&gt;
+&lt;p&gt;The issue that different algorithms may have different training speeds is not addressed in this project, developments in this direction are welcome. Currently all algos get the same amount of data. Online algorithms are trained in an online fashion, after each batch of data is collected, and before updating the agents of the batch algorithms.&lt;/p&gt;
+&lt;p&gt;To make this project run faster, data gatering is distributed across multiple processes (&lt;code&gt;fork&lt;/code&gt;), and the training is done in a single process. As the project was developed before I learnt about &lt;code&gt;mpi&lt;/code&gt; and &lt;code&gt;tensorboard&lt;/code&gt;, it does not use them, and much stuff is hardcoded. A full rewrite could be interesting, also to add the missing feature said above. At the time I tried to use &lt;code&gt;ray&lt;/code&gt; to distribute the training, but I wasn&amp;rsquo;t able to make it work, so I wrote everything from scratch. The code is not very clean, but it works.&lt;/p&gt;
+&lt;p&gt;Training scheme for the multi-algorithm training management:&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://sa1g.github.io/p/map-rl/onoff1.png"
+width="352"
+height="764"
+srcset="https://sa1g.github.io/p/map-rl/onoff1_hu_c660f2097489a994.png 480w, https://sa1g.github.io/p/map-rl/onoff1_hu_8f211db9ff06f49.png 1024w"
+loading="lazy"
+alt="Training Algorithms"
+class="gallery-image"
+data-flex-grow="46"
+data-flex-basis="110px"
+&gt;&lt;/p&gt;</description></item></channel></rss>

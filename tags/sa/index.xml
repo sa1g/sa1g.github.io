@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>SA on Ettore Saggiorato - Sa1g</title><link>https://sa1g.github.io/tags/sa/</link><description>Recent content in SA on Ettore Saggiorato - Sa1g</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Tue, 15 Jul 2025 01:00:00 +0000</lastBuildDate><atom:link href="https://sa1g.github.io/tags/sa/index.xml" rel="self" type="application/rss+xml"/><item><title>Natural Language Understanding</title><link>https://sa1g.github.io/p/nlu/</link><pubDate>Tue, 15 Jul 2025 01:00:00 +0000</pubDate><guid>https://sa1g.github.io/p/nlu/</guid><description>&lt;p&gt;&lt;a class="link" href="https://github.com/sa1g/natural-language-understanding" target="_blank" rel="noopener"
+&gt;Project Repo&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id="lm---language-modeling"&gt;LM - Language Modeling
+&lt;/h2&gt;&lt;p&gt;The objective is to implement various techniques that can enhance the performance of a simple language model for next-word prediction and to understand how each of these techniques influences the model. Experiment with the model architecture, substituting the RNN with an LSTM block, using different optimizers, and apply different regularization techniques: Dropout, Weight Tying, Variational Dropout, and Non-Monotonically Triggered Average SGD.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Dataset&lt;/strong&gt;: PennTreeBank.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Metrics&lt;/strong&gt;: Perplxity.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="nlu---natural-language-understanding"&gt;NLU - Natural Language Understanding
+&lt;/h2&gt;&lt;p&gt;The objective for this assignment is to jointly perform slot filling and intent prediction on the ATIS dataset. Intent prediction requires the model to classify the whole sequence to a predefined set of possible user intentions. Slot filling consists of identifying and classifying the relevant entities in the sequence, used to parameterize the user intent. For the first part, we are tasked with implementing a functioning system using an LSTM backbone for the word token representations. For the second part, we are tasked with finetuning a pre-trained transformer BERT encoder to do the same task. The detail that needs more attention is about managing sub-tokenization.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Dataset&lt;/strong&gt;: Atis.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Metrics&lt;/strong&gt;: Accuracy (intention classification), F1 (slot filling).&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="sa---sentiment-analysis"&gt;SA - Sentiment Analysis
+&lt;/h2&gt;&lt;p&gt;Fine-tune BERT for the Aspect-based Sentiment Analysis task regarding the extraction of the aspect terms only. This assignment is very similar to NLU, the main difference is how the labels are managed (all of them are either &lt;code&gt;O&lt;/code&gt; or &lt;code&gt;T&lt;/code&gt;), and adapting &lt;a class="link" href="https://github.com/lixin4ever/E2E-TBSA/blob/master/evals.py" target="_blank" rel="noopener"
+&gt;SemEval&lt;/a&gt; for this task.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Dataset&lt;/strong&gt;: SemEval2014, laptop, task 4.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Metrics&lt;/strong&gt;: F1, Precision and Recall.&lt;/li&gt;
+&lt;/ul&gt;</description></item></channel></rss>

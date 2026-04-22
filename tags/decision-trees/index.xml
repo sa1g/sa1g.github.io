@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Decision Trees on Ettore Saggiorato - Sa1g</title><link>https://sa1g.github.io/tags/decision-trees/</link><description>Recent content in Decision Trees on Ettore Saggiorato - Sa1g</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Sun, 11 Jun 2023 01:00:00 +0000</lastBuildDate><atom:link href="https://sa1g.github.io/tags/decision-trees/index.xml" rel="self" type="application/rss+xml"/><item><title>Multi-Agent Policy RL - AI Economist</title><link>https://sa1g.github.io/p/map-rl/</link><pubDate>Sun, 11 Jun 2023 01:00:00 +0000</pubDate><guid>https://sa1g.github.io/p/map-rl/</guid><description>&lt;p&gt;&lt;a class="link" href="https://github.com/sa1g/multi-agent-policy-rl" target="_blank" rel="noopener"
+&gt;Project Repo&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;The idea of this project is to train multiple agents in the &lt;a class="link" href="https://arxiv.org/abs/2108.02755" target="_blank" rel="noopener"
+&gt;AI Economist&lt;/a&gt; using &lt;a class="link" href="https://arxiv.org/abs/1707.06347" target="_blank" rel="noopener"
+&gt;PPO v1&lt;/a&gt; and &lt;a class="link" href="https://arxiv.org/abs/2012.07723" target="_blank" rel="noopener"
+&gt;Decision Trees with Q-Learning&lt;/a&gt; concurrently, to have a fast way to verify the capabilities of the DT in a complex, competitive, scenario. As no existing framework supports batch and online training algos concurrently, I implemented this basic framework.&lt;/p&gt;
+&lt;p&gt;The issue that different algorithms may have different training speeds is not addressed in this project, developments in this direction are welcome. Currently all algos get the same amount of data. Online algorithms are trained in an online fashion, after each batch of data is collected, and before updating the agents of the batch algorithms.&lt;/p&gt;
+&lt;p&gt;To make this project run faster, data gatering is distributed across multiple processes (&lt;code&gt;fork&lt;/code&gt;), and the training is done in a single process. As the project was developed before I learnt about &lt;code&gt;mpi&lt;/code&gt; and &lt;code&gt;tensorboard&lt;/code&gt;, it does not use them, and much stuff is hardcoded. A full rewrite could be interesting, also to add the missing feature said above. At the time I tried to use &lt;code&gt;ray&lt;/code&gt; to distribute the training, but I wasn&amp;rsquo;t able to make it work, so I wrote everything from scratch. The code is not very clean, but it works.&lt;/p&gt;
+&lt;p&gt;Training scheme for the multi-algorithm training management:&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://sa1g.github.io/p/map-rl/onoff1.png"
+width="352"
+height="764"
+srcset="https://sa1g.github.io/p/map-rl/onoff1_hu_c660f2097489a994.png 480w, https://sa1g.github.io/p/map-rl/onoff1_hu_8f211db9ff06f49.png 1024w"
+loading="lazy"
+alt="Training Algorithms"
+class="gallery-image"
+data-flex-grow="46"
+data-flex-basis="110px"
+&gt;&lt;/p&gt;</description></item></channel></rss>

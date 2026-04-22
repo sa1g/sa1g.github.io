@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Personal Projects &amp; Open Source Contributions on Ettore Saggiorato - Sa1g</title><link>https://sa1g.github.io/categories/personal_projects/</link><description>Recent content in Personal Projects &amp; Open Source Contributions on Ettore Saggiorato - Sa1g</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Sat, 17 Jan 2026 01:00:00 +0000</lastBuildDate><atom:link href="https://sa1g.github.io/categories/personal_projects/index.xml" rel="self" type="application/rss+xml"/><item><title>mythographer-5e</title><link>https://sa1g.github.io/p/mythographer-5e/</link><pubDate>Sat, 17 Jan 2026 01:00:00 +0000</pubDate><guid>https://sa1g.github.io/p/mythographer-5e/</guid><description>&lt;ul&gt;
+&lt;li&gt;&lt;a class="link" href="https://github.com/sa1g/dnd-typst-template" target="_blank" rel="noopener"
+&gt;Project Repo&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class="link" href="https://typst.app/universe/package/mythographer-5e" target="_blank" rel="noopener"
+&gt;Typst Universe&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Typst template for typsetting documents in the style of the fifth edition of Dungeon&amp;amp;Dragons.
+This package has been heavily inspired by the awesome work done by the &lt;em&gt;rpgTex&lt;/em&gt; team on their &lt;a class="link" href="https://github.com/rpgtex/DND-5e-LaTeX-Template" target="_blank" rel="noopener"
+&gt;DND-5e-LaTeX-Template&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;It supports 99% of D&amp;amp;D&amp;rsquo;s official manual features, automatic translations and it&amp;rsquo;s highly customizable.&lt;/p&gt;</description></item><item><title>FoundryVTT Header Authentication</title><link>https://sa1g.github.io/p/foundry-vtt-header-auth/</link><pubDate>Tue, 02 Sep 2025 01:00:00 +0000</pubDate><guid>https://sa1g.github.io/p/foundry-vtt-header-auth/</guid><description>&lt;p&gt;It was mostly a learning experience as I never touched header-based authentication before, but I needed this to work and the plugin didn&amp;rsquo;t support it.&lt;/p&gt;
+&lt;p&gt;I&amp;rsquo;ve added the documentation on how to make it work with Authentik, both Authentik, Traefik and FoundryVTT plugin configurations. The owner of the plugin was very kind and added support for configuring the &lt;code&gt;separator&lt;/code&gt; that Authentik needed.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a class="link" href="https://github.com/MaienM/foundry-vtt-header-auth" target="_blank" rel="noopener"
+&gt;Project Repo&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class="link" href="https://github.com/MaienM/foundry-vtt-header-auth/pull/1" target="_blank" rel="noopener"
+&gt;PR Link&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</description></item></channel></rss>
