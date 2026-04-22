@@ -1,5 +1,5 @@
 ---
-title: Personal Projects
+title: Personal Projects & Open Source Contributions
 description: The description of this category is pretty cool.
 image: DSCF0253.jpg
 
